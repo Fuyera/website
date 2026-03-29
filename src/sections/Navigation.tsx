@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Products', href: '#products' },
-  { label: 'Business Model', href: '#business-model' },
-  { label: 'Contact', href: '#contact' },
-];
+import { useLanguage } from '../lib/i18n/LanguageContext';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.company, href: '#about' },
+    { label: t.nav.products, href: '#products' },
+    { label: t.nav.businessModel, href: '#business-model' },
+    { label: t.nav.contact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,28 +66,43 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA & Language Toggle */}
             <div className="hidden md:flex items-center gap-4">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 text-xs font-mono tracking-widest text-slate-400 hover:text-white transition-colors uppercase px-2 py-1 border border-transparent hover:border-white/10"
+              >
+                <Globe className="w-4 h-4" />
+                {language === 'en' ? '中文' : 'EN'}
+              </button>
               <Button
                 size="sm"
                 className="bg-white text-black hover:bg-fuyera-amber rounded-none font-bold text-xs uppercase tracking-widest h-9 px-6 transition-colors"
                 onClick={() => scrollToSection('#contact')}
               >
-                Contact
+                {t.nav.contact}
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-slate-300 hover:text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-               <Menu className="w-6 h-6" />
-              )}
-            </button>
+            {/* Mobile Actions */}
+            <div className="flex md:hidden items-center gap-2">
+              <button
+                onClick={toggleLanguage}
+                className="p-2 text-slate-300 hover:text-white"
+              >
+                <span className="text-xs font-mono tracking-widest font-bold uppercase">{language === 'en' ? '中' : 'EN'}</span>
+              </button>
+              <button
+                className="p-2 text-slate-300 hover:text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                 <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -113,7 +130,7 @@ export function Navigation() {
                   className="w-full justify-center bg-white text-black hover:bg-fuyera-amber rounded-none h-12 font-bold tracking-widest uppercase"
                   onClick={() => scrollToSection('#contact')}
                 >
-                  Contact
+                  {t.nav.contact}
                 </Button>
               </div>
             </div>

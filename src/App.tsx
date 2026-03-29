@@ -6,6 +6,7 @@ import { ProductEcosystem } from './sections/ProductEcosystem';
 import { BusinessModel } from './sections/BusinessModel';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
+import { LanguageProvider } from './lib/i18n/LanguageContext';
 import './App.css';
 
 function App() {
@@ -34,19 +35,21 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-fuyera-dark text-foreground">
-      <Navigation />
-      
-      <main>
-        <Hero />
-        <CompanyOverview />
-        <ProductEcosystem />
-        <BusinessModel />
-        <Contact />
-      </main>
-      
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-fuyera-dark text-foreground">
+        <Navigation />
+        
+        <main>
+          <Hero />
+          <CompanyOverview />
+          <ProductEcosystem />
+          <BusinessModel />
+          <Contact />
+        </main>
+        
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 
