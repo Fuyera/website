@@ -2,55 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System: Corporate Precision
-   Aesthetic: Luxury Minimal × Industrial Utilitarian
-   Font pairing: DM Serif Display (editorial display) + DM Sans (clean body)
-   Color story: Deep slate + warm amber accent — trustworthy, not flashy */
+/* Design System: Luxury Utilitarianism / Editorial Brutalism
+   Font pairing: DM Serif Display (hero/display) + DM Sans (body)
+   Color story: True Black + Deep Slate + High-contrast Amber */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 @layer base {
   :root {
-    /* Corporate Precision palette */
-    --background: 220 20% 6%;
-    --foreground: 40 10% 92%;
-    --card: 220 18% 8%;
-    --card-foreground: 40 10% 92%;
-    --popover: 220 18% 8%;
-    --popover-foreground: 40 10% 92%;
-    --primary: 38 85% 56%;
-    --primary-foreground: 220 20% 6%;
-    --secondary: 220 14% 13%;
-    --secondary-foreground: 40 10% 92%;
-    --muted: 220 14% 13%;
-    --muted-foreground: 220 10% 50%;
-    --accent: 38 85% 56%;
-    --accent-foreground: 220 20% 6%;
+    /* Severe palette */
+    --background: 0 0% 2%;    /* #050505 */
+    --foreground: 0 0% 98%;   /* #FAFAFA */
+    --card: 0 0% 2%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 2%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 38 70% 53%;    /* #D49B3A */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 7%;     /* #111111 */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;        /* #1A1A1A */
+    --muted-foreground: 0 0% 60%;
+    --accent: 38 70% 53%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 14% 16%;
-    --input: 220 14% 16%;
-    --ring: 38 85% 56%;
-    --radius: 0.5rem;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 38 70% 53%;
+    --radius: 0rem;           /* Strict corners */
     
-    /* Fuyera brand tokens — now warm amber */
-    --fuyera-amber: 38 85% 56%;
-    --fuyera-amber-glow: 38 90% 65%;
-    --fuyera-dark: 220 20% 6%;
-    --fuyera-darker: 220 20% 4%;
-    --fuyera-slate: 220 14% 13%;
-    
-    /* Keep legacy CSS var names for Tailwind compat */
-    --fuyera-cyan: 38 85% 56%;
-    --fuyera-cyan-glow: 38 90% 65%;
-    
-    --sidebar-background: 220 18% 8%;
-    --sidebar-foreground: 40 10% 92%;
-    --sidebar-primary: 38 85% 56%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 14% 13%;
-    --sidebar-accent-foreground: 40 10% 92%;
-    --sidebar-border: 220 14% 16%;
-    --sidebar-ring: 38 85% 56%;
+    /* Fuyera brand tokens */
+    --fuyera-amber: 38 70% 53%;
+    --fuyera-dark: 0 0% 2%;
+    --fuyera-darker: 0 0% 0%;
+    --fuyera-slate: 0 0% 7%;
   }
 }
 
@@ -70,89 +55,75 @@
   }
   
   /* Editorial display headings */
-  h1, h2 {
+  h1, h2, h3, h4, .display-font {
     font-family: 'DM Serif Display', Georgia, serif;
     letter-spacing: -0.02em;
+    font-weight: 400;
   }
 }
 
 @layer utilities {
-  /* Amber glow effects */
-  .glow-amber {
-    box-shadow: 0 0 20px hsl(var(--fuyera-amber) / 0.25),
-                0 0 40px hsl(var(--fuyera-amber) / 0.15);
+  /* Architectural utilities */
+  .machined-panel {
+    @apply bg-fuyera-slate border border-white/10 relative;
+    /* transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1); */
   }
-  
-  .glow-amber-sm {
-    box-shadow: 0 0 8px hsl(var(--fuyera-amber) / 0.3),
-                0 0 16px hsl(var(--fuyera-amber) / 0.15);
+
+  .machined-panel:hover {
+    @apply border-fuyera-amber/50 z-10;
+    /* box-shadow: 4px 4px 0px rgba(212, 155, 58, 1);
+    transform: translate(-4px, -4px); */
   }
-  
-  /* Glassmorphism */
-  .glass {
-    background: hsl(var(--fuyera-dark) / 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+
+  .glass-harsh {
+    @apply bg-black/80 backdrop-blur-md;
   }
-  
-  /* Subtle dot grid - not the generic line grid */
-  .bg-grid {
-    background-image: radial-gradient(
-      circle at center,
-      hsl(var(--fuyera-amber) / 0.04) 1px,
-      transparent 1px
-    );
+
+  /* Intense background grid */
+  .bg-architectural-grid {
     background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   }
   
-  /* Radial gradient background */
-  .bg-gradient-radial {
-    background: radial-gradient(ellipse at top, hsl(var(--fuyera-slate) / 0.5) 0%, transparent 50%);
+  .bg-architectural-grid-dense {
+    background-size: 20px 20px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   }
-  
-  /* Float animation */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-pulse-slow {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  /* Scrollbar */
+
+  /* Scrollbar - Brutalist style */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
     background: hsl(var(--fuyera-dark));
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--fuyera-slate));
-    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--fuyera-amber) / 0.4);
+    background: hsl(var(--fuyera-amber));
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Focus styles — amber instead of default blue */
+/* Focus styles — strict amber outline */
 *:focus-visible {
-  outline: 2px solid hsl(38 85% 56%);
+  outline: 2px solid hsl(38 70% 53%);
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: hsl(38 85% 56% / 0.25);
-  color: hsl(40 10% 95%);
+  background: hsl(38 70% 53%);
+  color: #000;
 }
 
 /* Reduced motion */

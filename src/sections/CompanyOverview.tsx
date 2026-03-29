@@ -10,111 +10,120 @@ import {
 const highlights = [
   {
     icon: Building2,
-    title: 'Hong Kong Incorporated',
+    id: "OP.01",
+    title: 'HONG KONG INCORPORATED',
     description: 'Registered and operating as a private limited company in Hong Kong.',
   },
   {
     icon: Cpu,
-    title: 'Application-Layer AI',
-    description: 'Builds application-layer products, not foundation models. We focus on practical, user-facing solutions.',
+    id: "OP.02",
+    title: 'APPLICATION-LAYER AI',
+    description: 'Builds application-layer products, not foundation models. Focus on practical solutions.',
   },
   {
     icon: Globe,
-    title: 'Global Digital Distribution',
-    description: 'Products distributed through digital platforms such as the Apple App Store and web-based SaaS.',
+    id: "OP.03",
+    title: 'GLOBAL DIGITAL DIST.',
+    description: 'Products distributed through Apple App Store and web-based SaaS platforms.',
   },
   {
     icon: Smartphone,
-    title: 'Mobile & SaaS Products',
-    description: 'Developing AI-powered mobile applications and SaaS tools for productivity, workflow, and learning.',
+    id: "OP.04",
+    title: 'MOBILE & SAAS',
+    description: 'Developing AI-powered applications for productivity, workflow, and learning.',
   },
   {
     icon: TrendingUp,
-    title: 'Subscription-Based Revenue',
-    description: 'Business model centered on digital distribution, subscription monetization, and continuous improvement.',
+    id: "OP.05",
+    title: 'SUBSCRIPTION MODEL',
+    description: 'Business model centered on digital distribution and subscription monetization.',
   },
   {
     icon: ShieldCheck,
-    title: 'Compliant Operations',
-    description: 'Serving individual users and SME customers through transparent, auditable business operations.',
+    id: "OP.06",
+    title: 'COMPLIANT OPS',
+    description: 'Serving users and SMEs through transparent, auditable business operations.',
   },
 ];
 
 export function CompanyOverview() {
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-radial from-fuyera-slate/20 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-grid opacity-20" />
-
+    <section id="about" className="relative py-24 bg-fuyera-darker border-b border-white/10">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fuyera-cyan/10 border border-fuyera-cyan/20 text-fuyera-cyan text-xs font-medium mb-4">
-            <Building2 className="w-3 h-3" />
-            About Fuyera Intelligence
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-20 items-end">
+          <div className="lg:col-span-4 pb-4 border-b border-white/10">
+            <h2 className="text-sm font-mono tracking-widest text-fuyera-amber uppercase">
+              Corporate Overview
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Building AI software products{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuyera-cyan to-fuyera-cyan-glow">
-              with real-world value.
-            </span>
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            <p className="text-lg text-slate-300 leading-relaxed">
-              Fuyera Intelligence Limited is a Hong Kong incorporated technology company focused on developing and distributing AI-powered software applications.
-            </p>
-            <p className="text-base text-slate-400 leading-relaxed">
-              We build application-layer products for individual users and small-to-medium-sized businesses, with a focus on practical digital tools, productivity support, workflow enablement, and commercial AI use cases.
-            </p>
-            <p className="text-base text-slate-400 leading-relaxed">
-              Our business model centers on product development, digital distribution, subscription monetization, and continuous product improvement.
+          <div className="lg:col-span-8">
+            <h3 className="text-3xl sm:text-5xl font-bold text-white leading-tight display-font">
+              Building AI software with <br/> <span className="text-slate-500 italic">real-world value.</span>
+            </h3>
+            <p className="mt-6 text-lg text-slate-400 max-w-2xl font-light">
+              Fuyera Intelligence is a Hong Kong incorporated technology company focused on developing and distributing application-layer AI software. We prioritize practical digital tools, productivity support, and commercial AI use cases.
             </p>
           </div>
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Typographic Dossier List */}
+        <div className="border-t border-b border-white/20 divide-y divide-white/10">
           {highlights.map((item) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.title}
-                className="p-6 rounded-xl bg-fuyera-slate/30 border border-white/5 hover:border-fuyera-cyan/20 transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-fuyera-cyan/10 flex items-center justify-center mb-4 group-hover:bg-fuyera-cyan/20 transition-colors">
-                  <Icon className="w-6 h-6 text-fuyera-cyan" />
+              <div key={item.id} className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 group hover:bg-white/[0.02] transition-colors">
+                <div className="md:col-span-2 flex items-center gap-4 text-slate-500">
+                  <span className="font-mono text-xs">{item.id}</span>
+                  <Icon className="w-5 h-5 group-hover:text-fuyera-amber transition-colors" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                <div className="md:col-span-4">
+                  <h4 className="text-lg font-bold text-white tracking-wide">{item.title}</h4>
+                </div>
+                <div className="md:col-span-6">
+                  <p className="text-slate-400 font-light">{item.description}</p>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Founder Brief */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-fuyera-cyan/10 via-fuyera-slate/30 to-fuyera-slate/30 border border-fuyera-cyan/20">
-          <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-fuyera-cyan/20 to-fuyera-cyan/5 flex items-center justify-center border border-fuyera-cyan/20">
-              <span className="text-2xl font-bold text-fuyera-cyan">FY</span>
+        {/* Founder Dossier */}
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="machined-panel p-0 flex flex-col md:flex-row shadow-machined-dark">
+            {/* Identity Badge Side */}
+            <div className="bg-white text-black p-8 md:w-64 flex flex-col justify-between shrink-0">
+              <div>
+                <p className="text-xs font-mono font-bold tracking-widest mb-1 text-slate-500 uppercase">Director</p>
+                <h3 className="text-2xl font-bold display-font tracking-tight mt-4">FU YE</h3>
+                <p className="text-2xl font-light display-font tracking-tight text-slate-400">(傅晔)</p>
+              </div>
+              <div className="mt-12">
+                <div className="w-12 h-1 bg-black mb-4"></div>
+                <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500">Fuyera Intelligence Limited</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-white mb-1">FU YE (傅晔)</h3>
-              <p className="text-sm text-fuyera-cyan mb-4">Founder & Sole Director</p>
-              <div className="space-y-2 text-sm text-slate-400 leading-relaxed">
+            
+            {/* Intel details */}
+            <div className="p-8 lg:p-10 flex-1 bg-fuyera-slate text-slate-300 font-light leading-relaxed flex flex-col justify-center">
+              <div className="space-y-6">
                 <p>
-                  Bachelor's degree in Automation from Tianjin University. Over 25 years of experience in technology management, product development, and enterprise operations in the medical technology and intelligent systems sectors.
+                  <strong className="text-white font-medium">Background:</strong> Bachelor's degree in Automation from Tianjin University. Over 25 years of experience in technology management, product development, and enterprise operations in the medical technology and intelligent systems sectors.
                 </p>
+                <div className="h-px bg-white/10 w-full my-4"></div>
                 <p>
-                  Approved under Hong Kong's Top Talent Pass Scheme (TTPS) in September 2025, establishing a legal basis for long-term residence and commercial activity in Hong Kong.
+                  <strong className="text-white font-medium">Status:</strong> Approved under Hong Kong's Top Talent Pass Scheme (TTPS) in September 2025, establishing a legal basis for long-term residence and commercial activity in Hong Kong.
                 </p>
-                <p className="text-slate-500">
+                <div className="h-px bg-white/10 w-full my-4"></div>
+                <p>
                   Drawing upon years of technology management expertise, Mr. FU established Fuyera Intelligence to combine product development capabilities with AI technology, creating intelligent application products of genuine value for users worldwide.
                 </p>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

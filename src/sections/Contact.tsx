@@ -2,69 +2,77 @@ import { MapPin, Globe, Mail } from 'lucide-react';
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-fuyera-cyan/10 via-fuyera-slate/20 to-fuyera-dark" />
-      
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-fuyera-cyan/5 rounded-full blur-3xl animate-pulse-slow" />
-      </div>
-
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-24 bg-fuyera-dark">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Get in{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuyera-cyan to-fuyera-cyan-glow">
-              Touch
-            </span>
-          </h2>
-          <p className="text-lg text-slate-400">
-            We welcome inquiries from partners, platforms, and potential clients.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 mb-16 items-end">
+          <div className="pb-4 border-b border-white/10">
+            <h2 className="text-4xl sm:text-6xl font-bold text-white display-font tracking-tight uppercase">
+              Connections
+            </h2>
+          </div>
+          <div className="pb-4 sm:text-right">
+            <p className="text-lg text-slate-400 font-light">
+              We welcome inquiries from partners, platforms, and potential clients.
+            </p>
+          </div>
         </div>
 
-        {/* Contact Cards */}
-        <div className="grid sm:grid-cols-3 gap-6 mb-12">
-          <div className="p-6 rounded-xl bg-fuyera-slate/30 border border-white/5 text-center hover:border-fuyera-cyan/20 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-fuyera-cyan/10 flex items-center justify-center mx-auto mb-4">
-              <MapPin className="w-6 h-6 text-fuyera-cyan" />
+        {/* Contact Matrix */}
+        <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border border-white/10 bg-black">
+          
+          <div className="p-8 lg:p-12 group hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center justify-between mb-16">
+              <span className="font-mono text-xs text-slate-500">ORG</span>
+              <MapPin className="w-5 h-5 text-fuyera-amber" />
             </div>
-            <h3 className="font-semibold text-white mb-2">Company</h3>
-            <p className="text-sm text-slate-400">Fuyera Intelligence Limited</p>
-            <p className="text-xs text-slate-500 mt-1">孚烨纳智能科技有限公司</p>
+            <div>
+              <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-2">Company</p>
+              <h3 className="text-2xl font-bold text-white display-font tracking-tight mb-2">Fuyera Intelligence<br/>Limited</h3>
+              <p className="text-sm font-light text-slate-500">孚烨纳智能科技有限公司</p>
+            </div>
           </div>
 
-          <div className="p-6 rounded-xl bg-fuyera-slate/30 border border-white/5 text-center hover:border-fuyera-cyan/20 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-fuyera-cyan/10 flex items-center justify-center mx-auto mb-4">
-              <Globe className="w-6 h-6 text-fuyera-cyan" />
+          <div className="p-8 lg:p-12 group hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center justify-between mb-16">
+              <span className="font-mono text-xs text-slate-500">LOC</span>
+              <Globe className="w-5 h-5 text-fuyera-amber" />
             </div>
-            <h3 className="font-semibold text-white mb-2">Operating Base</h3>
-            <p className="text-sm text-slate-400">Hong Kong</p>
-            <p className="text-xs text-slate-500 mt-1">Incorporated March 2026</p>
+            <div>
+              <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-2">Operating Base</p>
+              <h3 className="text-2xl font-bold text-white display-font tracking-tight mb-2">Hong Kong</h3>
+              <p className="text-sm font-light text-slate-500">Incorporated March 2026</p>
+            </div>
           </div>
 
-          <div className="p-6 rounded-xl bg-fuyera-slate/30 border border-white/5 text-center hover:border-fuyera-cyan/20 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-fuyera-cyan/10 flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-6 h-6 text-fuyera-cyan" />
+          <div className="p-8 lg:p-12 group hover:bg-white/[0.02] transition-colors">
+            <div className="flex items-center justify-between mb-16">
+              <span className="font-mono text-xs text-slate-500">COM</span>
+              <Mail className="w-5 h-5 text-fuyera-amber" />
             </div>
-            <h3 className="font-semibold text-white mb-2">Contact</h3>
-            <a href="mailto:contact@fuyera.com" className="text-sm text-fuyera-cyan hover:text-fuyera-cyan-glow transition-colors">
-              contact@fuyera.com
-            </a>
-            <p className="text-xs text-slate-500 mt-1">Business inquiries welcome</p>
+            <div>
+              <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-2">Inquiries</p>
+              <a href="mailto:contact@fuyera.com" className="text-2xl font-bold text-white hover:text-fuyera-amber transition-colors display-font tracking-tight border-b border-transparent hover:border-fuyera-amber">
+                contact@fuyera.com
+              </a>
+              <p className="text-sm font-light text-slate-500 mt-2">Business inquiries welcome</p>
+            </div>
           </div>
+
         </div>
 
         {/* Business focus summary */}
-        <div className="p-6 rounded-xl bg-fuyera-slate/20 border border-white/5 text-center">
-          <p className="text-sm text-slate-400 leading-relaxed">
-            <span className="text-slate-300 font-medium">Business Focus:</span>{' '}
-            AI-powered software applications, SaaS, and mobile products.{' '}
-            Serving individual users and SME clients through digital distribution and subscription-based services.
+        <div className="mt-8 p-6 bg-fuyera-slate border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex gap-4 items-center">
+            <div className="w-2 h-2 bg-fuyera-amber rounded-full animate-pulse-slow"></div>
+            <span className="text-xs font-mono tracking-widest text-white uppercase">Business Focus</span>
+          </div>
+          <p className="text-sm text-slate-400 font-light flex-1 lg:max-w-3xl">
+            AI-powered software applications, SaaS, and mobile products. Serving individual users and SME clients through digital distribution and subscription-based services.
           </p>
         </div>
+        
       </div>
     </section>
   );

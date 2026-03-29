@@ -15,7 +15,8 @@ import {
   MessageSquare,
   Settings2,
   BookOpen,
-  Users
+  Users,
+  ChevronDown
 } from 'lucide-react';
 
 interface ProductCard {
@@ -27,7 +28,7 @@ interface ProductCard {
   iconLetter: string;
   tier: 'current' | 'reserve';
   status: string;
-  statusColor: string;
+  statusClasses: string;
   features: { icon: React.ElementType; label: string }[];
   monetization: string;
 }
@@ -41,8 +42,8 @@ const products: ProductCard[] = [
     icon: Target,
     iconLetter: 'A',
     tier: 'current',
-    status: 'In Development',
-    statusColor: 'bg-green-500/10 text-green-400 border-green-500/20',
+    status: 'IN DEVELOPMENT',
+    statusClasses: 'bg-fuyera-amber text-black border-transparent',
     features: [
       { icon: Mic, label: 'Voice, Tag & Text Input' },
       { icon: Bell, label: '3-Level Smart Reminder System' },
@@ -61,8 +62,8 @@ const products: ProductCard[] = [
     icon: Zap,
     iconLetter: 'C',
     tier: 'current',
-    status: 'Planning',
-    statusColor: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+    status: 'PLANNING',
+    statusClasses: 'bg-transparent text-slate-400 border-slate-500',
     features: [
       { icon: Workflow, label: 'Workflow Automation' },
       { icon: FileSearch, label: 'Content Operations' },
@@ -79,8 +80,8 @@ const products: ProductCard[] = [
     icon: GraduationCap,
     iconLetter: 'P',
     tier: 'reserve',
-    status: 'Reserve',
-    statusColor: 'bg-slate-500/10 text-slate-400 border-slate-500/20',
+    status: 'RESERVE',
+    statusClasses: 'bg-transparent text-slate-500 border-white/10',
     features: [
       { icon: BookOpen, label: 'AI-Assisted Learning' },
       { icon: Users, label: 'Student & Parent Support' },
@@ -95,81 +96,63 @@ function ProductCardComponent({ product }: { product: ProductCard }) {
 
   return (
     <div
-      className={`relative group cursor-pointer ${
-        product.tier === 'reserve' ? 'lg:col-span-2' : ''
+      className={`machined-panel group cursor-pointer p-0 flex flex-col justify-between ${
+        product.tier === 'reserve' ? 'lg:col-span-2 shadow-none border-dashed' : 'shadow-machined-dark hover:shadow-machined'
       }`}
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <div
-        className={`
-          relative h-full p-6 lg:p-8 rounded-2xl border transition-all duration-300
-          ${product.id === 'anchor'
-            ? 'border-fuyera-cyan/30 bg-fuyera-slate/50'
-            : 'border-white/5 bg-fuyera-slate/30 hover:border-white/10'
-          }
-        `}
-      >
-        {/* Status Badge */}
-        <div className="absolute top-4 right-4">
-          <span className={`px-2 py-0.5 rounded text-xs font-medium border ${product.statusColor}`}>
+      <div className="p-8 pb-4">
+        {/* Top Header Row */}
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-8 gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-black border border-white/10 flex items-center justify-center shrink-0">
+              <Icon className={`w-5 h-5 ${product.id === 'anchor' ? 'text-fuyera-amber' : 'text-white'}`} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white display-font tracking-tight">{product.name}</h3>
+              <p className="text-xs font-mono tracking-widest text-slate-400 uppercase mt-1">{product.tagline}</p>
+            </div>
+          </div>
+          <span className={`px-3 py-1 text-[10px] font-mono tracking-widest uppercase border ${product.statusClasses} shrink-0`}>
             {product.status}
           </span>
         </div>
 
-        {/* Header */}
-        <div className="flex items-start gap-4 mb-4">
-          <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-            product.id === 'anchor' ? 'bg-fuyera-cyan/20' : 'bg-white/5'
-          }`}>
-            <Icon className={`w-6 h-6 ${
-              product.id === 'anchor' ? 'text-fuyera-cyan' : 'text-slate-400'
-            }`} />
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white">{product.name}</h3>
-            <p className={`text-sm font-medium ${
-              product.id === 'anchor' ? 'text-fuyera-cyan' : 'text-slate-500'
-            }`}>{product.tagline}</p>
-          </div>
-        </div>
-
         {/* Description */}
-        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+        <p className="text-sm text-slate-300 font-light leading-relaxed mb-6">
           {product.description}
         </p>
 
-        {/* Features */}
-        {isExpanded && (
-          <div className="space-y-4 animate-fade-in">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {/* Features Content */}
+        <div className={`grid transition-all duration-300 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mb-6' : 'grid-rows-[0fr] opacity-0'}`}>
+          <div className="overflow-hidden space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
               {product.features.map((feature) => {
                 const FeatureIcon = feature.icon;
                 return (
                   <div
                     key={feature.label}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 text-sm"
+                    className="flex items-center gap-3 p-3 bg-fuyera-slate text-sm font-light text-slate-300 hover:bg-black transition-colors"
                   >
-                    <FeatureIcon className="w-4 h-4 text-slate-500 flex-shrink-0" />
-                    <span className="text-slate-300">{feature.label}</span>
+                    <FeatureIcon className="w-4 h-4 text-fuyera-amber shrink-0" />
+                    <span>{feature.label}</span>
                   </div>
                 );
               })}
             </div>
-
-            <div className="pt-3 border-t border-white/5">
-              <span className="text-xs text-slate-500">Monetization: </span>
-              <span className="text-xs text-slate-400">{product.monetization}</span>
+            
+            {/* Monetization */}
+            <div className="border border-white/10 p-3 bg-black flex justify-between items-center text-xs font-mono uppercase tracking-wider">
+              <span className="text-slate-500">Monetization Mode</span>
+              <span className="text-fuyera-amber text-right text-[10px]">{product.monetization}</span>
             </div>
           </div>
-        )}
-
-        {/* Expand hint */}
-        {!isExpanded && product.features.length > 0 && (
-          <div className="flex items-center gap-1 text-xs text-slate-500 mt-2">
-            <ArrowRight className="w-3 h-3" />
-            Click for details
-          </div>
-        )}
+        </div>
+      </div>
+      
+      {/* Toggle Bar */}
+      <div className="border-t border-white/10 p-3 bg-black flex justify-center items-center group-hover:bg-fuyera-amber transition-colors">
+        <ChevronDown className={`w-4 h-4 text-slate-500 group-hover:text-black transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
       </div>
     </div>
   );
@@ -177,49 +160,45 @@ function ProductCardComponent({ product }: { product: ProductCard }) {
 
 export function ProductEcosystem() {
   return (
-    <section id="products" className="relative py-24">
+    <section id="products" className="relative py-24 bg-fuyera-dark border-b border-white/10 bg-architectural-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Current Products Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Current Products{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuyera-cyan to-fuyera-cyan-glow">
-              in Development
-            </span>
+        
+        {/* Header */}
+        <div className="mb-16 border-l-4 border-fuyera-amber pl-6">
+          <p className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-4">Ecosystem Architecture</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white display-font tracking-tight">
+            Current Product Matrix
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            AI-powered software applications for productivity, workflow support, and education.
-          </p>
         </div>
 
         {/* Current Products */}
-        <div className="grid lg:grid-cols-2 gap-6 mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {products.filter(p => p.tier === 'current').map((product) => (
             <ProductCardComponent key={product.id} product={product} />
           ))}
         </div>
 
-        {/* Reserve Product Section */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px flex-1 bg-white/5" />
-            <span className="text-sm text-slate-500 font-medium">Reserve Product Direction</span>
-            <div className="h-px flex-1 bg-white/5" />
+        {/* Reserve Product Header */}
+        <div className="mt-24 mb-12 border-t border-white/10 pt-12 flex items-center justify-between">
+          <div>
+            <h3 className="text-2xl font-bold text-white display-font tracking-tight">Reserve Product Stack</h3>
+            <p className="text-sm font-mono text-slate-500 mt-2">LONG-TERM ROADMAP</p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-8">
           {products.filter(p => p.tier === 'reserve').map((product) => (
             <ProductCardComponent key={product.id} product={product} />
           ))}
         </div>
 
-        {/* Tech note */}
-        <div className="mt-12 p-6 rounded-xl border border-white/5 bg-fuyera-slate/20">
-          <p className="text-sm text-slate-500 text-center">
-            Our products incorporate compliant open-source frameworks and leading AI service integrations — including services from OpenAI, Anthropic, and others — as part of their technical implementation. Fuyera focuses on the application layer, not foundation model development.
+        {/* Tech architecture note */}
+        <div className="mt-16 border border-white/10 border-l-4 border-l-slate-500 bg-black p-6">
+          <p className="text-sm font-mono text-slate-400 leading-relaxed uppercase tracking-widest text-[10px]">
+            <strong className="text-white">Technical Architecture Note:</strong> Products integrate compliant open-source frameworks and AI endpoint APIs (OpenAI, Anthropic). Development strictly focuses on application layer workflows and UX, not foundation model training.
           </p>
         </div>
+        
       </div>
     </section>
   );
