@@ -96,26 +96,46 @@ export const translations = {
       }
     },
     contact: {
-      sectionLabel: 'COMMUNICATIONS MATRIX',
-      title: 'Contact Information',
-      description: 'For business inquiries, vendor negotiations, and media relations.',
-      items: {
-        email: { label: 'GENERAL INQUIRIES', value: 'hello@fuyera.com' },
-        press: { label: 'PRESS & MEDIA', value: 'media@fuyera.com' },
-        investor: { label: 'INVESTOR RELATIONS', value: 'ir@fuyera.com' },
-        office: { label: 'HEADQUARTERS', value: "19/F Asia Standard Tower, 59-65 Queen's Road Central" }
-      }
+      title: 'Connections',
+      subtitle: 'We welcome inquiries from partners, platforms, and potential clients.',
+      companyName: 'Fuyera Intelligence Limited',
+      companyNameZh: '孚烨纳智能科技有限公司',
+      location: 'Hong Kong',
+      incorporationDate: 'Incorporated March 2026',
+      email: 'hello@fuyera.com',
+      inquiries: 'Business inquiries welcome',
+      businessFocus: 'Business Focus',
+      businessFocusDesc: 'AI-powered software applications, SaaS, and mobile products. Serving individual users and SME clients through digital distribution and subscription-based services.'
     },
     footer: {
-      company: 'Fuyera Intelligence Limited',
-      companyZh: '孚烨纳智能科技有限公司',
       tagline: 'AI-powered mobile applications and SaaS tools. Headquartered in Hong Kong.',
-      legal: {
-        title: 'LEGAL',
-        privacy: 'Privacy Policy',
-        terms: 'Terms of Service'
+      registration: 'Registration',
+      links: {
+        products: {
+          title: 'PRODUCTS',
+          items: [
+            { label: 'Fuyera Anchor', href: '#products' },
+            { label: 'FuyeClaw', href: '#products' },
+            { label: 'FuyePal', href: '#products' }
+          ]
+        },
+        company: {
+          title: 'COMPANY',
+          items: [
+            { label: 'About', href: '#about' },
+            { label: 'Business Model', href: '#business-model' },
+            { label: 'Contact', href: '#contact' }
+          ]
+        },
+        legal: {
+          title: 'LEGAL',
+          items: [
+            { label: 'Privacy Policy', href: '#' },
+            { label: 'Terms of Service', href: '#' }
+          ]
+        }
       },
-      copyright: '© 2026 Fuyera Intelligence Limited. Hong Kong.'
+      rights: '© 2026 Fuyera Intelligence Limited. Hong Kong.'
     }
   },
   zh: {
@@ -213,26 +233,46 @@ export const translations = {
       }
     },
     contact: {
-      sectionLabel: 'COMMUNICATIONS MATRIX',
-      title: '商务与联络',
-      description: '面向供应商接入、企业采购及媒体公关问询的全球联络矩阵。',
-      items: {
-        email: { label: '常规业务咨询', value: 'hello@fuyera.com' },
-        press: { label: '公关与媒介', value: 'media@fuyera.com' },
-        investor: { label: '投资者关系', value: 'ir@fuyera.com' },
-        office: { label: '香港总部', value: '香港中环皇后大道中 59-65 号泛海大厦 19 楼' }
-      }
+      title: '商务联络',
+      subtitle: '欢迎合作伙伴、平台方及潜在客户前来咨询。',
+      companyName: 'Fuyera Intelligence Limited',
+      companyNameZh: '孚烨纳智能科技有限公司',
+      location: '中国香港',
+      incorporationDate: '2026 年 3 月成立',
+      email: 'hello@fuyera.com',
+      inquiries: '欢迎商业咨询',
+      businessFocus: '业务聚焦',
+      businessFocusDesc: 'AI 驱动的软件应用、SaaS 及移动产品。通过数字分发与订阅服务，面向个人用户及中小企业客户。'
     },
     footer: {
-      company: '孚烨纳智能科技有限公司',
-      companyZh: 'Fuyera Intelligence Limited',
       tagline: '面向全球发行的 AI 移动应用及 SaaS 开发商。香港属地运营。',
-      legal: {
-        title: 'LEGAL',
-        privacy: '隐私政策 (Privacy Policy)',
-        terms: '服务条款 (Terms of Service)'
+      registration: '注册信息',
+      links: {
+        products: {
+          title: '产品',
+          items: [
+            { label: 'Fuyera Anchor', href: '#products' },
+            { label: 'FuyeClaw', href: '#products' },
+            { label: 'FuyePal', href: '#products' }
+          ]
+        },
+        company: {
+          title: '公司',
+          items: [
+            { label: '关于我们', href: '#about' },
+            { label: '商业模式', href: '#business-model' },
+            { label: '联系我们', href: '#contact' }
+          ]
+        },
+        legal: {
+          title: '法律',
+          items: [
+            { label: '隐私政策', href: '#' },
+            { label: '服务条款', href: '#' }
+          ]
+        }
       },
-      copyright: '© 2026 Fuyera Intelligence Limited. Hong Kong.'
+      rights: '© 2026 Fuyera Intelligence Limited. Hong Kong.'
     }
   }
 };
