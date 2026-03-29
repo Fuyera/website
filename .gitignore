@@ -25,3 +25,9 @@ Thumbs.db
 # Misc
 fuyera-dist.tar.gz
 zipmjy9P
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
