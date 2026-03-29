@@ -1,10 +1,7 @@
-import { ArrowRight, ArrowDownRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '../lib/i18n/LanguageContext';
 
 export function Hero() {
-  const { t } = useLanguage();
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -13,131 +10,154 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-center pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden border-b border-white/10 bg-architectural-grid">
-      {/* Editorial Brutalist Layout */}
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
-        
-        {/* Top Meta Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-6 mb-12 lg:mb-20 gap-4 sm:gap-0">
-          <div className="flex flex-wrap items-center gap-4 text-xs font-mono uppercase tracking-widest text-slate-500">
-            <span className="text-fuyera-amber font-bold">FUYERA INTEL</span>
-            <span className="w-1 h-1 bg-white/20 hidden sm:block"></span>
-            <span>{t.hero.stats.registration.value}</span>
-            <span className="w-1 h-1 bg-white/20 hidden sm:block"></span>
-            <span>{t.hero.stats.founded.value}</span>
-          </div>
-          <div className="flex items-center gap-6 text-xs text-slate-400 font-mono tracking-widest uppercase">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-fuyera-amber"></div>
-              <span>APPLE DEVELOPER</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-white"></div>
-              <span>{t.hero.stats.delivery.value}</span>
-            </div>
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-grid opacity-50" />
+      <div className="absolute inset-0 bg-gradient-radial from-fuyera-slate/30 via-transparent to-transparent" />
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-fuyera-cyan/30 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${6 + Math.random() * 4}s`,
+            }}
+          />
+        ))}
+      </div>
 
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-12">
-          
-          {/* Left: Dominant Typographic Header (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div>
-              <p className="text-sm font-mono tracking-widest text-fuyera-amber mb-6 uppercase">{t.hero.headlineLabel}</p>
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-[6rem] font-bold text-white leading-[1] tracking-tight mb-8 display-font">
-                {t.hero.titleLine1}
-                <br />
-                <span className="text-white italic">{t.hero.titleLine2}</span>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fuyera-cyan/10 border border-fuyera-cyan/20 text-fuyera-cyan text-xs font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-fuyera-cyan animate-pulse" />
+                Hong Kong · Est. 2026
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+                AI-powered software products for{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuyera-cyan to-fuyera-cyan-glow">
+                  individuals and SMEs
+                </span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed font-light mb-12">
-                {t.hero.description}
+              <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed">
+                Fuyera Intelligence is a Hong Kong-based technology company developing SaaS and mobile applications for productivity, workflow support, and applied AI use cases.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-4 lg:mt-8">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-fuyera-amber text-black hover:bg-white rounded-none font-bold text-sm tracking-widest uppercase h-14 px-8 border-2 border-transparent hover:border-black transition-colors w-full sm:w-auto"
+                className="bg-fuyera-cyan text-fuyera-dark hover:bg-fuyera-cyan-glow font-semibold group px-6"
                 onClick={() => scrollToSection('#products')}
               >
-                {t.hero.primaryCta}
-                <ArrowDownRight className="w-4 h-4 ml-3" />
+                Our Products
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-2 border-white/20 text-white hover:bg-white hover:text-black rounded-none font-bold text-sm tracking-widest uppercase h-14 px-8 transition-colors w-full sm:w-auto"
-                onClick={() => scrollToSection('#about')}
+                className="border-slate-700 text-slate-300 hover:bg-white/5 hover:text-white group px-6"
+                onClick={() => scrollToSection('#contact')}
               >
-                {t.hero.secondaryCta}
+                Contact Us
               </Button>
+            </div>
+
+            {/* Key facts */}
+            <div className="flex items-center gap-6 pt-4">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-400" />
+                <span className="text-sm text-slate-400">Apple Developer ✓</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-fuyera-cyan" />
+                <span className="text-sm text-slate-400">iOS Native Apps</span>
+              </div>
             </div>
           </div>
 
-          {/* Right: Technical Directory List (5 cols) */}
-          <div className="lg:col-span-5 lg:pl-12 lg:border-l border-white/10 flex flex-col justify-center mt-12 lg:mt-0">
+          {/* Right: Product Concept Visual */}
+          <div className="relative">
+            {/* Glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-fuyera-cyan/20 to-fuyera-cyan-glow/10 rounded-2xl blur-2xl opacity-50" />
             
-            <div className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-8 flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-white/20"></span>
-              {t.products.sectionLabel}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-fuyera-slate/30 p-8 lg:p-10">
+              {/* Product Showcase cards */}
+              <div className="space-y-4">
+                <div className="text-xs text-fuyera-cyan font-medium uppercase tracking-wider mb-6">
+                  Our Product Lines
+                </div>
+                
+                {/* Anchor card */}
+                <div className="p-4 rounded-xl bg-fuyera-dark/50 border border-fuyera-cyan/20 hover:border-fuyera-cyan/40 transition-colors">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-fuyera-cyan/20 flex items-center justify-center">
+                      <span className="text-fuyera-cyan text-sm font-bold">A</span>
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-sm">Fuyera Anchor</div>
+                      <div className="text-slate-500 text-xs">Productivity & Intent Management</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-fuyera-cyan/10 text-fuyera-cyan border border-fuyera-cyan/20">iOS Native</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-green-500/10 text-green-400 border border-green-500/20">In Development</span>
+                  </div>
+                </div>
+
+                {/* FuyeClaw card */}
+                <div className="p-4 rounded-xl bg-fuyera-dark/50 border border-white/10 hover:border-white/20 transition-colors">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                      <span className="text-slate-300 text-sm font-bold">C</span>
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-sm">FuyeClaw</div>
+                      <div className="text-slate-500 text-xs">AI Workflow System for SMEs</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-white/5 text-slate-400 border border-white/10">SaaS</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Planning</span>
+                  </div>
+                </div>
+
+                {/* FuyePal card */}
+                <div className="p-4 rounded-xl bg-fuyera-dark/50 border border-white/5 hover:border-white/10 transition-colors">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                      <span className="text-slate-400 text-sm font-bold">P</span>
+                    </div>
+                    <div>
+                      <div className="text-slate-300 font-semibold text-sm">FuyePal</div>
+                      <div className="text-slate-500 text-xs">AI Learning Assistant</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-white/5 text-slate-500 border border-white/5">Reserve</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="flex flex-col gap-0 border-t border-white/10">
-              
-              {/* Product 1 */}
-              <div className="group border-b border-white/10 py-6 hover:bg-white/[0.02] cursor-pointer transition-colors" onClick={() => scrollToSection('#products')}>
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-fuyera-amber font-mono text-xs">P.01</span>
-                    <h3 className="text-2xl font-bold text-white display-font group-hover:text-fuyera-amber transition-colors">{t.products.anchor.name}</h3>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-slate-600 group-hover:text-fuyera-amber transition-colors opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 duration-300 hidden sm:block" />
-                </div>
-                <div className="pl-11">
-                  <p className="text-base text-slate-400 font-light mb-4 line-clamp-2">{t.products.anchor.description}</p>
-                  <div className="flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-wider">
-                    <span className="text-white bg-white/10 px-2 py-1">{t.products.anchor.status}</span>
-                  </div>
-                </div>
-              </div>
 
-              {/* Product 2 */}
-              <div className="group border-b border-white/10 py-6 hover:bg-white/[0.02] cursor-pointer transition-colors" onClick={() => scrollToSection('#products')}>
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-slate-500 font-mono text-xs">P.02</span>
-                    <h3 className="text-xl font-bold text-slate-300 display-font group-hover:text-white transition-colors">{t.products.claw.name}</h3>
-                  </div>
-                </div>
-                <div className="pl-11">
-                  <p className="text-sm text-slate-500 font-light mb-4 line-clamp-2">{t.products.claw.description}</p>
-                  <div className="flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-wider">
-                    <span className="text-slate-400 border border-white/10 px-2 py-1">{t.products.claw.status}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Product 3 */}
-              <div className="group border-b border-white/10 py-6 hover:bg-white/[0.02] cursor-pointer transition-colors" onClick={() => scrollToSection('#products')}>
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-slate-600 font-mono text-xs">P.03</span>
-                    <h3 className="text-xl font-bold text-slate-400 display-font group-hover:text-white transition-colors">{t.products.pal.name}</h3>
-                  </div>
-                </div>
-                <div className="pl-11">
-                  <p className="text-sm text-slate-600 font-light mb-4 line-clamp-2">{t.products.pal.description}</p>
-                  <div className="flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-wider">
-                    <span className="text-slate-600 border border-white/5 px-2 py-1 opacity-50">{t.products.pal.status}</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            {/* Decorative elements */}
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-fuyera-cyan/10 rounded-full blur-xl" />
+            <div className="absolute -top-4 -left-4 w-16 h-16 bg-fuyera-cyan/5 rounded-full blur-lg" />
           </div>
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-fuyera-dark to-transparent" />
     </section>
   );
 }

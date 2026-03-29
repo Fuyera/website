@@ -4,66 +4,93 @@ import {
   CreditCard,
   Cloud,
   Smartphone,
+  FileText,
   Server,
-  Wrench,
-  Globe
+  Wrench
 } from 'lucide-react';
-import { useLanguage } from '../lib/i18n/LanguageContext';
+
+const revenueStreams = [
+  {
+    icon: Smartphone,
+    title: 'Digital Product Distribution',
+    description: 'Applications distributed through the Apple App Store and other digital platforms.',
+  },
+  {
+    icon: CreditCard,
+    title: 'App Subscription Revenue',
+    description: 'Subscription-based and one-time purchase monetization for mobile applications.',
+  },
+  {
+    icon: FileText,
+    title: 'SaaS & Enterprise Service Income',
+    description: 'Recurring SaaS subscriptions and service-based deployment for business clients.',
+  },
+];
+
+const operatingExpenses = [
+  {
+    icon: Cloud,
+    title: 'Cloud Services',
+    description: 'AWS, Cloudflare, and related infrastructure for product deployment and operations.',
+  },
+  {
+    icon: Server,
+    title: 'AI API Services',
+    description: 'OpenAI, Anthropic, and other AI service providers for application-layer intelligence.',
+  },
+  {
+    icon: Wrench,
+    title: 'Software & Development Tools',
+    description: 'Apple Developer Program, design tools, collaboration software, and technical services.',
+  },
+];
 
 export function BusinessModel() {
-  const { t } = useLanguage();
-
-  const inflowIcons = [Smartphone, CreditCard];
-  const outflowIcons = [Cloud, Server, Wrench, Globe];
-
   return (
-    <section id="business-model" className="relative py-24 sm:py-32 bg-fuyera-darker border-b border-white/10">
+    <section id="business-model" className="relative py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-radial from-fuyera-slate/20 via-transparent to-transparent" />
       
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-20 items-end">
-          <div className="lg:col-span-4 pb-4 border-b border-white/10">
-            <h2 className="text-sm font-mono tracking-widest text-fuyera-amber uppercase">
-              {t.businessModel.sectionLabel}
-            </h2>
-          </div>
-          <div className="lg:col-span-8">
-            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight display-font tracking-tight">
-              {t.businessModel.title}
-            </h3>
-            <p className="mt-8 text-lg sm:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
-              {t.businessModel.description}
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            How We{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuyera-cyan to-fuyera-cyan-glow">
+              Operate
+            </span>
+          </h2>
+          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+            Fuyera develops digital software products and commercializes them through subscription-based applications, SaaS services, and selected business solutions.
+          </p>
         </div>
 
-        {/* Two-Column Ledger Layout */}
-        <div className="grid lg:grid-cols-2 gap-px bg-white/10 border border-white/10">
-          
+        {/* Two-Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Revenue */}
-          <div className="bg-fuyera-darker p-8 sm:p-12 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col">
-            <div className="flex items-center justify-between gap-3 mb-10 pb-4 border-b border-white/10">
-              <h3 className="text-xl sm:text-2xl font-bold text-white display-font tracking-tight">{t.businessModel.inflow.title}</h3>
-              <ArrowDownToLine className="w-5 h-5 text-fuyera-amber shrink-0" />
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+                <ArrowDownToLine className="w-5 h-5 text-green-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white">Expected Revenue Streams</h3>
             </div>
             
-            <div className="space-y-8 flex-1">
-              {t.businessModel.inflow.items.map((item, index) => {
-                const Icon = inflowIcons[index] || Smartphone;
+            <div className="space-y-4">
+              {revenueStreams.map((item) => {
+                const Icon = item.icon;
                 return (
-                  <div key={item.name} className="group">
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                      <div className="font-mono text-xs text-slate-500 mt-1 shrink-0">
-                        0{index + 1}
+                  <div
+                    key={item.title}
+                    className="p-5 rounded-xl bg-fuyera-slate/30 border border-white/5 hover:border-green-500/20 transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Icon className="w-4 h-4 text-green-400" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <Icon className="w-4 h-4 text-fuyera-amber shrink-0" />
-                          <h4 className="font-bold text-white tracking-widest text-sm uppercase">{item.name}</h4>
-                        </div>
-                        <p className="text-sm text-slate-400 font-light leading-relaxed mb-3">{item.desc}</p>
-                        <span className="text-[10px] font-mono tracking-widest uppercase border border-white/10 px-2 py-1 text-slate-500 inline-block bg-black">{item.value}</span>
+                      <div>
+                        <h4 className="font-medium text-white mb-1">{item.title}</h4>
+                        <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -73,28 +100,29 @@ export function BusinessModel() {
           </div>
 
           {/* Expenses */}
-          <div className="bg-fuyera-darker p-8 sm:p-12 border-b lg:border-b-0 lg:border-r lg:border-r-0 border-white/10 flex flex-col">
-            <div className="flex items-center justify-between gap-3 mb-10 pb-4 border-b border-white/10">
-              <h3 className="text-xl sm:text-2xl font-bold text-white display-font tracking-tight">{t.businessModel.outflow.title}</h3>
-              <ArrowUpFromLine className="w-5 h-5 text-slate-500 shrink-0" />
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-fuyera-cyan/10 flex items-center justify-center">
+                <ArrowUpFromLine className="w-5 h-5 text-fuyera-cyan" />
+              </div>
+              <h3 className="text-lg font-semibold text-white">Operating Expenses</h3>
             </div>
             
-            <div className="space-y-8 flex-1">
-              {t.businessModel.outflow.items.map((item, index) => {
-                const Icon = outflowIcons[index] || Cloud;
+            <div className="space-y-4">
+              {operatingExpenses.map((item) => {
+                const Icon = item.icon;
                 return (
-                  <div key={item.name} className="group">
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                      <div className="font-mono text-xs text-slate-500 mt-1 shrink-0">
-                        0{index + 1}
+                  <div
+                    key={item.title}
+                    className="p-5 rounded-xl bg-fuyera-slate/30 border border-white/5 hover:border-fuyera-cyan/20 transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-fuyera-cyan/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Icon className="w-4 h-4 text-fuyera-cyan" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <Icon className="w-4 h-4 text-white group-hover:text-fuyera-amber transition-colors shrink-0" />
-                          <h4 className="font-bold text-white tracking-widest text-sm uppercase">{item.name}</h4>
-                        </div>
-                        <p className="text-sm text-slate-400 font-light leading-relaxed mb-3">{item.desc}</p>
-                        <span className="text-[10px] font-mono tracking-widest uppercase border border-white/10 px-2 py-1 text-slate-500 inline-block bg-black">{item.value}</span>
+                      <div>
+                        <h4 className="font-medium text-white mb-1">{item.title}</h4>
+                        <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -104,24 +132,23 @@ export function BusinessModel() {
           </div>
         </div>
 
-        {/* Transaction Matrix */}
-        <div className="mt-16 border border-white/10 bg-black">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <div className="p-6 sm:p-8">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-2">Primary Currencies</p>
-              <p className="text-lg sm:text-xl font-bold text-white display-font tracking-tight">HKD & USD</p>
+        {/* Transaction note */}
+        <div className="mt-12 p-6 rounded-xl border border-white/5 bg-fuyera-slate/20">
+          <div className="grid sm:grid-cols-3 gap-4 text-center text-sm">
+            <div>
+              <div className="text-slate-500 mb-1">Primary Currencies</div>
+              <div className="text-white font-medium">HKD & USD</div>
             </div>
-            <div className="p-6 sm:p-8">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-2">Transaction Protocol</p>
-              <p className="text-lg sm:text-xl font-bold text-white display-font tracking-tight">Bank Transfer &middot; Platforms</p>
+            <div>
+              <div className="text-slate-500 mb-1">Transaction Methods</div>
+              <div className="text-white font-medium">Bank Transfer · Platform Settlement</div>
             </div>
-            <div className="p-6 sm:p-8">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-2">Coverage Zone</p>
-              <p className="text-lg sm:text-xl font-bold text-white display-font tracking-tight break-words uppercase">{t.businessModel.regions}</p>
+            <div>
+              <div className="text-slate-500 mb-1">Operating Regions</div>
+              <div className="text-white font-medium">Hong Kong · Asia-Pacific · Global</div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
