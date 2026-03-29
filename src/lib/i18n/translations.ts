@@ -100,7 +100,7 @@ export const translations = {
       title: 'Contact Information',
       description: 'For business inquiries, vendor negotiations, and media relations.',
       items: {
-        email: { label: 'GENERAL INQUIRIES', value: 'contact@fuyera.com' },
+        email: { label: 'GENERAL INQUIRIES', value: 'hello@fuyera.com' },
         press: { label: 'PRESS & MEDIA', value: 'media@fuyera.com' },
         investor: { label: 'INVESTOR RELATIONS', value: 'ir@fuyera.com' },
         office: { label: 'HEADQUARTERS', value: "19/F Asia Standard Tower, 59-65 Queen's Road Central" }
@@ -217,7 +217,7 @@ export const translations = {
       title: '商务与联络',
       description: '面向供应商接入、企业采购及媒体公关问询的全球联络矩阵。',
       items: {
-        email: { label: '常规业务咨询', value: 'contact@fuyera.com' },
+        email: { label: '常规业务咨询', value: 'hello@fuyera.com' },
         press: { label: '公关与媒介', value: 'media@fuyera.com' },
         investor: { label: '投资者关系', value: 'ir@fuyera.com' },
         office: { label: '香港总部', value: '香港中环皇后大道中 59-65 号泛海大厦 19 楼' }
