@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System: Corporate Precision
+   Aesthetic: Luxury Minimal × Industrial Utilitarian
+   Font pairing: DM Serif Display (editorial display) + DM Sans (clean body)
+   Color story: Deep slate + warm amber accent — trustworthy, not flashy */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@layer base {
+  :root {
+    /* Corporate Precision palette */
+    --background: 220 20% 6%;
+    --foreground: 40 10% 92%;
+    --card: 220 18% 8%;
+    --card-foreground: 40 10% 92%;
+    --popover: 220 18% 8%;
+    --popover-foreground: 40 10% 92%;
+    --primary: 38 85% 56%;
+    --primary-foreground: 220 20% 6%;
+    --secondary: 220 14% 13%;
+    --secondary-foreground: 40 10% 92%;
+    --muted: 220 14% 13%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 38 85% 56%;
+    --accent-foreground: 220 20% 6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 16%;
+    --input: 220 14% 16%;
+    --ring: 38 85% 56%;
+    --radius: 0.5rem;
+    
+    /* Fuyera brand tokens — now warm amber */
+    --fuyera-amber: 38 85% 56%;
+    --fuyera-amber-glow: 38 90% 65%;
+    --fuyera-dark: 220 20% 6%;
+    --fuyera-darker: 220 20% 4%;
+    --fuyera-slate: 220 14% 13%;
+    
+    /* Keep legacy CSS var names for Tailwind compat */
+    --fuyera-cyan: 38 85% 56%;
+    --fuyera-cyan-glow: 38 90% 65%;
+    
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 40 10% 92%;
+    --sidebar-primary: 38 85% 56%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 14% 13%;
+    --sidebar-accent-foreground: 40 10% 92%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 38 85% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Editorial display headings */
+  h1, h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  /* Amber glow effects */
+  .glow-amber {
+    box-shadow: 0 0 20px hsl(var(--fuyera-amber) / 0.25),
+                0 0 40px hsl(var(--fuyera-amber) / 0.15);
+  }
+  
+  .glow-amber-sm {
+    box-shadow: 0 0 8px hsl(var(--fuyera-amber) / 0.3),
+                0 0 16px hsl(var(--fuyera-amber) / 0.15);
+  }
+  
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--fuyera-dark) / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  /* Subtle dot grid - not the generic line grid */
+  .bg-grid {
+    background-image: radial-gradient(
+      circle at center,
+      hsl(var(--fuyera-amber) / 0.04) 1px,
+      transparent 1px
+    );
+    background-size: 40px 40px;
+  }
+  
+  /* Radial gradient background */
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at top, hsl(var(--fuyera-slate) / 0.5) 0%, transparent 50%);
+  }
+  
+  /* Float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--fuyera-dark));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--fuyera-slate));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--fuyera-amber) / 0.4);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Focus styles — amber instead of default blue */
+*:focus-visible {
+  outline: 2px solid hsl(38 85% 56%);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: hsl(38 85% 56% / 0.25);
+  color: hsl(40 10% 95%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
