@@ -99,17 +99,17 @@ export function CompanyOverview() {
               <span className="text-2xl font-bold text-fuyera-cyan">FY</span>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">傅晔｜创始人</h3>
-              <p className="text-sm text-fuyera-cyan mb-4">Founder</p>
+              <h3 className="text-xl font-bold text-white mb-1">FU YE | Founder</h3>
+              <p className="text-sm text-fuyera-cyan mb-4">Founder & Sole Director</p>
               <div className="space-y-3 text-sm text-slate-400 leading-relaxed">
                 <p>
-                  傅晔毕业于天津大学自动化专业，拥有25年医疗器械研发、生产与管理经验，长期专注于二类、三类医疗器械的软硬件设计、法规合规与注册申报，熟悉医疗器械产品从研发设计、工程转化到注册上市的完整流程。
+                  Fu Ye graduated from Tianjin University with a degree in Automation and brings 25 years of experience in medical device R&D, manufacturing, and management. He has long focused on hardware and software design, regulatory compliance, and registration filings for Class II and III medical devices, with deep expertise across the full product lifecycle from R&D and engineering transfer to regulatory approval and market launch.
                 </p>
                 <p>
-                  在深厚产业背景的基础上，傅晔持续拓展面向未来的技术能力，形成了覆盖智能硬件、嵌入式系统、移动应用开发与AI应用架构的综合技术体系。其技术方向包括医疗器械硬件研发与生产管理、嵌入式开发（STM32、ESP32、树莓派、MCU）、AIoT架构设计、嵌入式AI工具链，以及Flutter、UniApp、iOS/Android原生应用开发、多代理系统架构、微SaaS与无服务器架构等。
+                  Building on this strong industrial foundation, Fu Ye has continuously expanded his technical capabilities toward future-oriented domains, developing a comprehensive skill set spanning intelligent hardware, embedded systems, mobile application development, and AI application architecture. His technical focus areas include medical device hardware R&D and production management, embedded development (STM32, ESP32, Raspberry Pi, MCU), AIoT architecture design, embedded AI toolchains, as well as Flutter, UniApp, iOS/Android native app development, multi-agent system architecture, micro-SaaS, and serverless architecture.
                 </p>
                 <p>
-                  作为兼具产业经验、工程能力与产品创新视野的实践者，傅晔始终关注技术的真实落地价值，致力于推动医疗科技、智能设备与人工智能能力的深度融合，打造面向未来的高价值智能产品与解决方案。
+                  As a practitioner combining deep industrial experience, engineering capability, and product innovation vision, Fu Ye consistently focuses on the real-world value of technology. He is dedicated to driving the deep integration of medical technology, intelligent devices, and artificial intelligence to create high-value smart products and solutions for the future.
                 </p>
               </div>
             </div>
