@@ -99,11 +99,17 @@ export function CompanyOverview() {
               <span className="text-2xl font-bold text-fuyera-cyan">FY</span>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">FU YE (傅晔)</h3>
-              <p className="text-sm text-fuyera-cyan mb-4">Founder & Sole Director</p>
-              <div className="space-y-2 text-sm text-slate-400 leading-relaxed">
+              <h3 className="text-xl font-bold text-white mb-1">傅晔｜创始人</h3>
+              <p className="text-sm text-fuyera-cyan mb-4">Founder</p>
+              <div className="space-y-3 text-sm text-slate-400 leading-relaxed">
                 <p>
-                  Drawing upon years of senior management experience in listed medical device companies and proficiency in full-stack development, Mr. Fu established Fuyera to combine his product capabilities with AI. Approved under Hong Kong's Top Talent Pass Scheme (TTPS) in Sep 2025.
+                  傅晔毕业于天津大学自动化专业，拥有25年医疗器械研发、生产与管理经验，长期专注于二类、三类医疗器械的软硬件设计、法规合规与注册申报，熟悉医疗器械产品从研发设计、工程转化到注册上市的完整流程。
+                </p>
+                <p>
+                  在深厚产业背景的基础上，傅晔持续拓展面向未来的技术能力，形成了覆盖智能硬件、嵌入式系统、移动应用开发与AI应用架构的综合技术体系。其技术方向包括医疗器械硬件研发与生产管理、嵌入式开发（STM32、ESP32、树莓派、MCU）、AIoT架构设计、嵌入式AI工具链，以及Flutter、UniApp、iOS/Android原生应用开发、多代理系统架构、微SaaS与无服务器架构等。
+                </p>
+                <p>
+                  作为兼具产业经验、工程能力与产品创新视野的实践者，傅晔始终关注技术的真实落地价值，致力于推动医疗科技、智能设备与人工智能能力的深度融合，打造面向未来的高价值智能产品与解决方案。
                 </p>
               </div>
             </div>
