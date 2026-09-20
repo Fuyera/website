@@ -1,5 +1,5 @@
 import { useLanguage } from "../i18n";
-import { EngineeringShowcase } from "../components/site/Portfolio";
+import { SystemDiagram } from "../components/site/Portfolio";
 import { engineeringCases } from "../portfolio";
 import { services } from "../content";
 import {
@@ -14,7 +14,7 @@ export function Services() {
   return (
     <>
       <PageIntro eyebrow={t("ENGINEERING SERVICES")} title={t("Bring a real workflow.")}>
-        <p>{t("Build on concrete foundations in mission systems, speech workflows and native applications. We help adapt the product, connect the right interfaces and deliver an agreed scope.")}</p>
+        <p>{t("Adapt an existing product, connect it to your systems or develop a prototype. We define the work, deliverables and validation around your needs.")}</p>
         <LinkButton href={localHref("/contact")}>{t("Discuss a project")}</LinkButton>
       </PageIntro>
       <section className="section section-after-intro">
@@ -110,19 +110,19 @@ export function Technology() {
       >
         <p>{t("Local event infrastructure, streaming speech and native desktop interaction. The product portfolio makes our engineering scope concrete.")}</p>
       </PageIntro>
-      <EngineeringShowcase />
       <section className="section">
         <div className="container">
           <div className="section-heading">
-            <h2>{t("What the foundations")}<br />{t("make possible.")}</h2>
-            <p>{t("Each product puts a different engineering discipline to work. Scope and readiness remain specific to the product.")}</p>
+            <h2>{t("Three engineering challenges.")}</h2>
+            <p>{t("See the implementation approach and the validation behind it. Interactive website examples explain behaviour; they are not field-deployment evidence.")}</p>
           </div>
-          <div className="engineering-discipline-grid">
+          <div className="engineering-evidence-list">
             {engineeringCases.map((item) => (
               <article key={item.id}>
                 <p className="eyebrow">{t(item.category)}</p>
                 <h3>{t(item.product)}</h3>
-                <p>{t(item.summary)}</p>
+                <p className="lead">{t(item.title)}</p>
+                <SystemDiagram item={item} />
                 <ul>
                   {item.capabilities.map(([name, body]) => (
                     <li key={name}>
@@ -131,6 +131,7 @@ export function Technology() {
                     </li>
                   ))}
                 </ul>
+                <div className="evidence-note"><h4>{t("Evidence & readiness")}</h4><p>{t(item.evidence)}</p></div>
                 <LinkButton href={localHref(item.href)} secondary>{t("Explore this product")}</LinkButton>
               </article>
             ))}
@@ -144,9 +145,8 @@ export function Technology() {
             <h2>{t("Adapt the system")}<br />{t("to the work.")}</h2>
           </div>
           <div>
-            <p className="lead">{t("An English-language edition involves more than translating the interface.")}</p>
+            <p className="lead">{t("Start with the operating environment and the people using the system.")}</p>
             <p>{t("We define terminology, input sources, workflow rules, integration points and review responsibilities for the intended users. A bounded demonstration establishes the next step before a wider deployment.")}</p>
-            <p>{t("Fuyera coordinates the commercial scope, localisation and delivery discussion. Deployment targets and acceptance criteria are agreed for the specific product and project.")}</p>
             <LinkButton href={localHref("/services")} secondary>{t("Explore our engineering services")}</LinkButton>
           </div>
         </div>

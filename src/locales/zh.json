@@ -1452,8 +1452,8 @@
     "車輛信號、定位、攝像頭、語音與醫療設備信息屬於項目集成方向。相關能力部署前，需要驗證設備協議、證據質量與運行環境。"
   ],
   "The current engineering prototype includes mission and event handling, local storage, replay, an edge cockpit and a read-only fleet view. Its software foundation has been exercised with synthetic data. Live vehicle and medical-device integration remain project validation work.": [
-    "当前工程原型包括任务与事件处理、本地存储、回放、边缘驾驶舱及只读车队视图。软件基础已使用合成数据进行验证，实车和医疗设备集成仍需项目验证。",
-    "當前工程原型包括任務與事件處理、本地存儲、回放、邊緣駕駛艙及只讀車隊視圖。軟件基礎已使用合成數據進行驗證，實車和醫療設備集成仍需項目驗證。"
+    "当前工程原型包括任务与事件处理、本地存储、回放、车端工作台及只读车队视图。软件基础已使用合成数据进行验证，实车和医疗设备集成仍需项目验证。",
+    "當前工程原型包括任務與事件處理、本地存儲、回放、車端工作台及只讀車隊視圖。軟件基礎已使用合成數據進行驗證，實車和醫療設備集成仍需項目驗證。"
   ],
   "The product direction is to combine signals into an understandable mission context, with evidence behind each proposed event. This foundation supports future multimodal interpretation and reviewed documentation; those AI and clinical integrations are not presented as completed features.": [
     "产品方向是将多种信号汇集为可理解的任务上下文，并为每个候选事件提供证据。该基础为后续多模态理解与经复核的文档生成提供支撑；这些 AI 与临床集成尚未作为已完成功能提供。",
@@ -2154,5 +2154,429 @@
   "Interaction illustration. Canvas draws over other apps; it does not read or analyse their screen content.": [
     "交互示意。Canvas 在其他应用上方绘制笔迹，不读取或分析其屏幕内容。",
     "互動示意。Canvas 在其他應用上方繪製筆跡，不讀取或分析其屏幕內容。"
+  ],
+  "For operational teams and system integrators.": [
+    "面向业务团队与系统集成商。",
+    "面向業務團隊與系統整合商。"
+  ],
+  "Everyday software": [
+    "日常软件",
+    "日常軟體"
+  ],
+  "Independent apps for explaining and staying focused.": [
+    "独立应用，帮助讲解与保持专注。",
+    "獨立應用程式，協助講解與保持專注。"
+  ],
+  "Screen annotation on Mac": [
+    "Mac 屏幕批注",
+    "Mac 螢幕註記"
+  ],
+  "Explore Canvas": [
+    "了解 Canvas",
+    "了解 Canvas"
+  ],
+  "Intentional phone use": [
+    "带着目的使用手机",
+    "帶著目的使用手機"
+  ],
+  "Record what you opened your phone to do. Keep that intention visible and review it afterwards.": [
+    "记录拿起手机的目的，持续提醒自己，并在使用后回顾。",
+    "記錄拿起手機的目的，持續提醒自己，並在使用後回顧。"
+  ],
+  "See how the products": [
+    "从具体任务",
+    "從具體任務"
+  ],
+  "handle real tasks.": [
+    "了解产品如何工作。",
+    "了解產品如何運作。"
+  ],
+  "Explore an event correction, a missing call detail and a drawing layer. These interactive examples use synthetic content.": [
+    "体验事件更正、通话信息补充和屏幕批注。这些交互示例使用合成内容。",
+    "體驗事件更正、通話資訊補充和螢幕註記。這些互動示例使用合成內容。"
+  ],
+  "A TASK IN PRACTICE": [
+    "任务示例",
+    "任務示例"
+  ],
+  "The task": [
+    "要完成的任务",
+    "要完成的任務"
+  ],
+  "What you do": [
+    "操作过程",
+    "操作過程"
+  ],
+  "The result": [
+    "得到的结果",
+    "得到的結果"
+  ],
+  "CHOOSING A PRODUCT": [
+    "选择产品",
+    "選擇產品"
+  ],
+  "Choose by the task": [
+    "从要完成的任务",
+    "從要完成的任務"
+  ],
+  "you need to complete.": [
+    "选择合适的产品。",
+    "選擇合適的產品。"
+  ],
+  "The professional systems address mission records and call handling. Canvas and Anchor are independent apps for everyday tasks. Each has its own availability and setup requirements.": [
+    "专业系统面向任务记录和通话处理。Canvas 与 Anchor 是服务日常任务的独立应用，各有自己的可用状态与使用要求。",
+    "專業系統面向任務記錄和通話處理。Canvas 與 Anchor 是服務日常任務的獨立應用程式，各有自己的可用狀態與使用要求。"
+  ],
+  "For professional systems, start with a discussion of your workflow, interfaces and target environment. Fuyera coordinates the product enquiry and adaptation work.": [
+    "专业系统的合作从业务流程、接口与使用环境开始讨论，由 Fuyera 协调产品咨询与适配工作。",
+    "專業系統的合作從業務流程、介面與使用環境開始討論，由 Fuyera 協調產品諮詢與適配工作。"
+  ],
+  "Products & Solutions": [
+    "产品与解决方案",
+    "產品與解決方案"
+  ],
+  "Everyday software.": [
+    "日常软件。",
+    "日常軟體。"
+  ],
+  "Intelligent systems & everyday software — Fuyera": [
+    "智能系统与日常软件 — Fuyera",
+    "智慧系統與日常軟體 — Fuyera"
+  ],
+  "Live transcription, structured call facts and human-reviewed assistance. Explore the pilot-stage software and its project adaptation requirements.": [
+    "实时转写、结构化通话信息与人工复核辅助。了解试点阶段的软件能力及项目适配要求。",
+    "即時轉寫、結構化通話資訊與人工覆核輔助。了解試點階段的軟體能力及專案適配要求。"
+  ],
+  "Product adaptation & engineering services — Fuyera": [
+    "产品适配与工程服务 — Fuyera",
+    "產品適配與工程服務 — Fuyera"
+  ],
+  "Adapt a product, connect a workflow or build a prototype. Explore product adaptation, system integration and software development with Fuyera.": [
+    "适配产品、连接业务流程或开发原型。了解 Fuyera 的产品适配、系统集成与软件开发服务。",
+    "適配產品、連接業務流程或開發原型。了解 Fuyera 的產品適配、系統整合與軟體開發服務。"
+  ],
+  "Meet Fuyera: professional intelligent systems, everyday software products and related adaptation, integration and engineering services.": [
+    "了解 Fuyera：专业智能系统、日常软件产品，以及相关适配、集成与工程服务。",
+    "了解 Fuyera：專業智慧系統、日常軟體產品，以及相關適配、整合與工程服務。"
+  ],
+  "Product adaptation": [
+    "产品适配",
+    "產品適配"
+  ],
+  "Adapt a product to your language, workflow and operating environment.": [
+    "根据使用语言、业务流程与运行环境适配产品。",
+    "根據使用語言、業務流程與運行環境適配產品。"
+  ],
+  "A version fitted to the task.": [
+    "让版本适合实际任务。",
+    "讓版本適合實際任務。"
+  ],
+  "Teams evaluating one of the professional systems for their own users.": [
+    "希望为自身用户引入专业系统的团队。",
+    "希望為自身使用者引入專業系統的團隊。"
+  ],
+  "The product, target language, user roles and examples of the work it needs to support.": [
+    "目标产品、使用语言、用户角色及需要支持的任务示例。",
+    "目標產品、使用語言、使用者角色及需要支援的任務示例。"
+  ],
+  "An adapted interface or workflow, validation examples and operating notes, as defined for the project.": [
+    "按项目约定交付适配后的界面或流程、验证示例与操作说明。",
+    "按專案約定交付適配後的介面或流程、驗證示例與操作說明。"
+  ],
+  "Language, terminology, devices and live operating conditions require validation for the intended use.": [
+    "语言、术语、设备及实际运行条件需要针对用途验证。",
+    "語言、術語、裝置及實際運行條件需要針對用途驗證。"
+  ],
+  "System & workflow integration": [
+    "系统与流程集成",
+    "系統與流程整合"
+  ],
+  "Connect speech, AI and data capabilities to the systems your team already uses.": [
+    "将语音、AI 与数据能力接入团队现有系统。",
+    "將語音、AI 與資料能力接入團隊現有系統。"
+  ],
+  "Interfaces with checkable inputs and outputs.": [
+    "让接口输入输出可核查。",
+    "讓介面輸入輸出可核查。"
+  ],
+  "Prototyping & product development": [
+    "原型与产品开发",
+    "原型與產品開發"
+  ],
+  "Professional systems. Everyday software.": [
+    "专业系统，日常软件。",
+    "專業系統，日常軟體。"
+  ],
+  "Fuyera brings intelligent systems and focused software products to professional teams and individual users, with product adaptation, integration and engineering services.": [
+    "Fuyera 为专业团队与个人用户提供智能系统和专注于具体任务的软件产品，并提供产品适配、集成与工程服务。",
+    "Fuyera 為專業團隊與個人使用者提供智慧系統和專注於具體任務的軟體產品，並提供產品適配、整合與工程服務。"
+  ],
+  "Two product directions.": [
+    "两条产品方向，",
+    "兩條產品方向，"
+  ],
+  "Clear responsibilities.": [
+    "清晰的工作范围。",
+    "清晰的工作範圍。"
+  ],
+  "Our work includes software product development and operation, alongside commercial enquiries, adaptation and delivery coordination for professional systems.": [
+    "我们的工作涵盖软件产品开发与运营，以及专业系统的商务咨询、适配和交付协调。",
+    "我們的工作涵蓋軟體產品開發與營運，以及專業系統的商務諮詢、適配和交付協調。"
+  ],
+  "The portfolio covers ambulance mission records, operator assistance, Mac screen annotation and intentional phone use. Each product has its own users, release status and support arrangements.": [
+    "产品方向包括救护车任务记录、坐席辅助、Mac 屏幕批注和有目的的手机使用。每款产品都有明确的适用人群、发布状态与支持安排。",
+    "產品方向包括救護車任務記錄、坐席輔助、Mac 螢幕註記和有目的的手機使用。每款產品都有明確的適用人群、發布狀態與支援安排。"
+  ],
+  "WHAT WE WORK ON": [
+    "我们做什么",
+    "我們做什麼"
+  ],
+  "Software products": [
+    "软件产品",
+    "軟體產品"
+  ],
+  "Anchor is available on the App Store. laofu canvas is prepared for public release. Their product pages provide platform, feature and support information.": [
+    "Anchor 已在 App Store 上架，laofu canvas 正在准备公开发布。产品页面提供平台、功能与支持信息。",
+    "Anchor 已在 App Store 上架，laofu canvas 正在準備公開發布。產品頁面提供平台、功能與支援資訊。"
+  ],
+  "Ambulance AI System and Intelligent Operator Assistant are discussed as project solutions, with adaptation and validation for the intended environment.": [
+    "救护车 AI 系统与智能坐席助手按项目讨论方案，针对实际使用环境进行适配与验证。",
+    "救護車 AI 系統與智能坐席助手按專案討論方案，針對實際使用環境進行適配與驗證。"
+  ],
+  "Engineering services": [
+    "工程服务",
+    "工程服務"
+  ],
+  "Product adaptation, system integration and prototype development connect these product directions to specific customer requirements.": [
+    "通过产品适配、系统集成与原型开发，将产品方向落实到客户的具体需求。",
+    "透過產品適配、系統整合與原型開發，將產品方向落實到客戶的具體需求。"
+  ],
+  "A product enquiry, an adaptation request or an integration challenge. Start with the task and the outcome you have in mind.": [
+    "无论是产品咨询、适配需求还是集成问题，都可以从具体任务与期望结果开始。",
+    "無論是產品諮詢、適配需求還是整合問題，都可以從具體任務與期望結果開始。"
+  ],
+  "What happens next": [
+    "接下来如何推进",
+    "接下來如何推進"
+  ],
+  "We review the fit with the product or service, clarify missing requirements and discuss a next step before proposing delivery scope.": [
+    "我们会评估产品或服务是否适合需求，补充必要信息，讨论下一步，再提出交付范围。",
+    "我們會評估產品或服務是否適合需求，補充必要資訊，討論下一步，再提出交付範圍。"
+  ],
+  "Support for an existing project": [
+    "已有项目支持",
+    "既有專案支援"
+  ],
+  "Use the support channel agreed for your deployment. If you need help finding it, email Fuyera with the product and project reference, without sensitive operational data.": [
+    "请使用项目约定的支持渠道。如需协助查找，可邮件联系 Fuyera，注明产品和项目，不要包含敏感业务数据。",
+    "請使用專案約定的支援管道。如需協助查找，可電郵聯絡 Fuyera，註明產品和專案，不要包含敏感業務資料。"
+  ],
+  "Email project support": [
+    "邮件联系项目支持",
+    "電郵聯絡專案支援"
+  ],
+  "Planning a new project?": [
+    "正在筹划新项目？",
+    "正在籌劃新專案？"
+  ],
+  "Discuss your requirements": [
+    "讨论您的需求",
+    "討論您的需求"
+  ],
+  "Intelligent systems for professional work.": [
+    "面向专业工作的智能系统，",
+    "面向專業工作的智慧系統，"
+  ],
+  "Focused software for everyday tasks.": [
+    "服务日常任务的软件产品。",
+    "服務日常任務的軟體產品。"
+  ],
+  "Explore ambulance mission records, AI-assisted call handling, screen annotation and intentional phone use. Fuyera supports product enquiries, adaptation and integration around your needs.": [
+    "了解救护车任务记录、AI 坐席辅助、屏幕批注与有目的的手机使用。Fuyera 围绕您的需求提供产品咨询、适配与集成服务。",
+    "了解救護車任務記錄、AI 坐席輔助、螢幕註記與有目的的手機使用。Fuyera 圍繞您的需求提供產品諮詢、適配與整合服務。"
+  ],
+  "Explore products & solutions": [
+    "了解产品与解决方案",
+    "了解產品與解決方案"
+  ],
+  "Find the product": [
+    "从您的任务出发，",
+    "從您的任務出發，"
+  ],
+  "for your task.": [
+    "找到合适的产品。",
+    "找到合適的產品。"
+  ],
+  "Start with what": [
+    "从需要改变的",
+    "從需要改變的"
+  ],
+  "you need to change.": [
+    "具体问题开始。",
+    "具體問題開始。"
+  ],
+  "Adapt a product, connect an existing workflow or develop a prototype. Choose the starting point that fits your project.": [
+    "适配产品、连接现有流程或开发原型，选择适合项目的合作起点。",
+    "適配產品、連接現有流程或開發原型，選擇適合專案的合作起點。"
+  ],
+  "Products, adaptation": [
+    "产品、适配",
+    "產品、適配"
+  ],
+  "and engineering.": [
+    "与工程服务。",
+    "與工程服務。"
+  ],
+  "Explore what each product does, who it serves and how to get started. Availability and project requirements are shown for each product.": [
+    "了解各产品的用途、适用人群与开始方式。每款产品分别说明当前状态与项目要求。",
+    "了解各產品的用途、適用人群與開始方式。每款產品分別說明目前狀態與專案要求。"
+  ],
+  "For operational teams, with adaptation and integration defined for each project.": [
+    "面向业务团队，按项目确定适配与集成范围。",
+    "面向業務團隊，按專案確定適配與整合範圍。"
+  ],
+  "Adapt an existing product, connect it to your systems or develop a prototype. We define the work, deliverables and validation around your needs.": [
+    "适配现有产品、接入您的系统，或开发原型。围绕需求确定工作内容、交付物与验证方式。",
+    "適配現有產品、接入您的系統，或開發原型。圍繞需求確定工作內容、交付物與驗證方式。"
+  ],
+  "Three engineering challenges.": [
+    "三个具体的工程问题。",
+    "三個具體的工程問題。"
+  ],
+  "See the implementation approach and the validation behind it. Interactive website examples explain behaviour; they are not field-deployment evidence.": [
+    "了解实现方式与已完成的验证。网站交互示例用于解释操作，不代表现场部署证据。",
+    "了解實作方式與已完成的驗證。網站互動示例用於解釋操作，不代表現場部署證據。"
+  ],
+  "Evidence & readiness": [
+    "验证依据与当前状态",
+    "驗證依據與目前狀態"
+  ],
+  "Start with the operating environment and the people using the system.": [
+    "从运行环境和实际使用者出发。",
+    "從運行環境和實際使用者出發。"
+  ],
+  "Local recording & replay": [
+    "本地记录与回放",
+    "本機記錄與重播"
+  ],
+  "What works today.": [
+    "当前可用的能力，",
+    "目前可用的能力，"
+  ],
+  "What your project needs.": [
+    "项目需要的适配。",
+    "專案需要的適配。"
+  ],
+  "Current capabilities": [
+    "当前能力",
+    "目前能力"
+  ],
+  "Discuss your project requirements.": [
+    "讨论您的项目需求。",
+    "討論您的專案需求。"
+  ],
+  "Tell us your operating scenario, language, existing systems and intended users. We discuss product fit, English-language adaptation and integration around an agreed scope.": [
+    "告诉我们使用场景、语言、现有系统与目标用户。我们会在约定范围内讨论产品适用性、英文适配与系统集成。",
+    "告訴我們使用場景、語言、現有系統與目標使用者。我們會在約定範圍內討論產品適用性、英文適配與系統整合。"
+  ],
+  "Prepare your enquiry": [
+    "准备咨询信息",
+    "準備諮詢資訊"
+  ],
+  "For ambulance operators and integration teams.": [
+    "面向救护车运营机构与集成团队。",
+    "面向救護車營運機構與整合團隊。"
+  ],
+  "Mission records & review": [
+    "任务记录与复核",
+    "任務記錄與覆核"
+  ],
+  "Bring recorded mission events, source references and corrections into one timeline for review.": [
+    "将任务事件、来源记录与更正历史汇集到同一条时间线，便于复核。",
+    "將任務事件、來源記錄與更正歷史彙集到同一條時間軸，便於覆核。"
+  ],
+  "Discuss a pilot": [
+    "讨论试点",
+    "討論試點"
+  ],
+  "Review a departure time that was entered incorrectly.": [
+    "复核一条录入错误的出发时间。",
+    "覆核一條輸入錯誤的出發時間。"
+  ],
+  "Open the original event, inspect its source and record a correction.": [
+    "打开原始事件，查看来源并记录更正。",
+    "開啟原始事件，查看來源並記錄更正。"
+  ],
+  "See the corrected time alongside the original record.": [
+    "同时查看更正后的时间与原始记录。",
+    "同時查看更正後的時間與原始記錄。"
+  ],
+  "Software prototype tested with synthetic events. Live vehicle and medical-device integration remain to be validated.": [
+    "软件原型已使用合成事件测试。实际车辆与医疗设备的集成仍需验证。",
+    "軟體原型已使用合成事件測試。實際車輛與醫療裝置的整合仍需驗證。"
+  ],
+  "For emergency call centres and integration teams.": [
+    "面向急救呼叫中心与集成团队。",
+    "面向急救呼叫中心與整合團隊。"
+  ],
+  "Call transcription & operator review": [
+    "通话转写与坐席复核",
+    "通話轉寫與坐席覆核"
+  ],
+  "Turn call transcripts into key facts and follow-up prompts, with the operator reviewing and confirming the information.": [
+    "从通话转写中整理关键信息与追问提示，由坐席人员复核确认。",
+    "從通話轉寫中整理關鍵資訊與追問提示，由坐席人員覆核確認。"
+  ],
+  "Discuss integration": [
+    "讨论集成",
+    "討論整合"
+  ],
+  "A caller gives an address but does not specify the entrance.": [
+    "来电者提供了地址，但没有说明入口。",
+    "來電者提供了地址，但沒有說明入口。"
+  ],
+  "Read the transcript, check the extracted fields and ask about the missing detail.": [
+    "阅读转写内容，检查提取字段，追问缺失细节。",
+    "閱讀轉寫內容，檢查擷取欄位，追問缺失細節。"
+  ],
+  "Keep operator-confirmed information distinct from the original transcript.": [
+    "区分坐席确认的信息与原始转写内容。",
+    "區分坐席確認的資訊與原始轉寫內容。"
+  ],
+  "Pilot-stage software with transcription and review workflows. English recognition and target call connections require project validation.": [
+    "试点阶段的软件已具备转写与复核流程。英文识别和目标通话线路的接入需要项目验证。",
+    "試點階段的軟體已具備轉寫與覆核流程。英文辨識和目標通話線路的接入需要專案驗證。"
+  ],
+  "For teachers, presenters and anyone explaining on screen.": [
+    "面向教师、演示者和需要屏幕讲解的用户。",
+    "面向教師、簡報者和需要螢幕講解的使用者。"
+  ],
+  "Draw over slides, documents and videos on your Mac, then switch back to the app underneath.": [
+    "在 Mac 的幻灯片、文档和视频上批注，再切回底层应用继续操作。",
+    "在 Mac 的投影片、文件和影片上註記，再切回下方應用程式繼續操作。"
+  ],
+  "Explain a point while keeping a document or video in view.": [
+    "讲解时，让文档或视频始终保持可见。",
+    "講解時，讓文件或影片始終保持可見。"
+  ],
+  "Draw on a separate layer, then hide the ink to return to the app.": [
+    "在独立图层上绘制，隐藏笔迹后回到原应用。",
+    "在獨立圖層上繪製，隱藏筆跡後回到原應用程式。"
+  ],
+  "Bring the marks back when you want to continue explaining.": [
+    "需要继续讲解时，恢复原有批注。",
+    "需要繼續講解時，恢復原有註記。"
+  ],
+  "Native macOS software with drawing, pass-through and local recovery. Public release is pending; the scene image is an illustration.": [
+    "原生 macOS 软件，具备绘制、穿透操作与本地恢复能力。尚待公开发布；场景图为示意。",
+    "原生 macOS 軟體，具備繪製、穿透操作與本機恢復能力。尚待公開發布；場景圖為示意。"
+  ],
+  "About": [
+    "关于我们",
+    "關於我們"
+  ],
+  "Select the original event, then open the correction to compare its time and source.": [
+    "选择原始事件，再打开更正记录，对比时间与来源。",
+    "選擇原始事件，再開啟更正記錄，對比時間與來源。"
   ]
 }

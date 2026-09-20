@@ -52,7 +52,7 @@ try {
       `<meta property="og:description" content="${escape(page.description)}">`,
       `<meta property="og:url" content="${url}">`,
       `<meta property="og:image" content="${origin}/images/social-card.png">`,
-      `<meta property="og:image:alt" content="Fuyera — AI products. Practical engineering.">`,
+      `<meta property="og:image:alt" content="Fuyera — Professional systems. Everyday software.">`,
       `<meta name="twitter:card" content="summary_large_image">`,
     ].join("\n    ");
     const html = template
@@ -98,7 +98,7 @@ try {
           fontSize: 70,
           fontWeight: 600,
         },
-        "AI products.",
+        "Professional systems.",
       ),
       createElement(
         "text",
@@ -110,7 +110,7 @@ try {
           fontSize: 70,
           fontWeight: 600,
         },
-        "Practical engineering.",
+        "Everyday software.",
       ),
       createElement("rect", {
         x: 76,

@@ -18,19 +18,19 @@ export function Products() {
     <>
       <PageIntro
         eyebrow={t("PRODUCTS & SOLUTIONS")}
-        title={t("Professional systems. Personal tools.")}
+        title={t("Professional systems. Everyday software.")}
       >
-        <p>{t("From mission records and intelligent call handling to the desktop and the phone. Explore each product’s purpose, working foundation and path to delivery.")}</p>
+        <p>{t("Explore what each product does, who it serves and how to get started. Availability and project requirements are shown for each product.")}</p>
       </PageIntro>
       <section className="section section-after-intro">
         <div className="container">
           <div className="portfolio-subheading">
             <h2>{t("Professional systems")}</h2>
-            <p>{t("Project-based solutions, with English-language editions and integration scoped through Fuyera.")}</p>
+            <p>{t("For operational teams, with adaptation and integration defined for each project.")}</p>
           </div>
           <ProfessionalProducts />
           <div className="portfolio-subheading">
-            <h2>{t("Desktop & personal tools")}</h2>
+            <h2>{t("Everyday software")}</h2>
             <p>{t("Focused applications with their own platform and release information.")}</p>
           </div>
           <DesktopProducts />

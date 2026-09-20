@@ -63,10 +63,10 @@ export function Header({ path }: { path: string }) {
           aria-label={t("Main navigation")}
         >
           {[
-            ["Products", "/products"],
+            ["Products & Solutions", "/products"],
             ["Engineering", "/technology"],
-            ["Services", "/services"],
-            ["Company", "/company"],
+            ["Work with us", "/services"],
+            ["About", "/company"],
           ].map(([label, href]) => (
             <a
               key={label}
@@ -108,13 +108,13 @@ export function Footer() {
           <div>
             <a className="wordmark" href={localHref("/")}>{t("Fuyera")}<span className="brand-dot" />
             </a>
-            <p>{t("Focused products.")}<br />{t("Practical engineering.")}</p>
+            <p>{t("Professional systems.")}<br />{t("Everyday software.")}</p>
           </div>
           <div className="footer-group">
             <span>{t("Explore")}</span>
-            <a href={localHref("/products")}>{t("Products")}</a>
-            <a href={localHref("/services")}>{t("Services")}</a>
-            <a href={localHref("/company")}>{t("Company")}</a>
+            <a href={localHref("/products")}>{t("Products & Solutions")}</a>
+            <a href={localHref("/services")}>{t("Work with us")}</a>
+            <a href={localHref("/company")}>{t("About")}</a>
           </div>
           <div className="footer-group">
             <span>{t("Learn & connect")}</span>

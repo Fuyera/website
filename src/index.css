@@ -2655,3 +2655,47 @@ html:lang(zh) .eyebrow { letter-spacing: 0.08em; }
     margin-top: 30px;
   }
 }
+
+/* Product-led overview and engineering evidence. */
+.hero h1 { font-size: clamp(38px, 4.3vw, 64px); max-width: 19ch; line-height: 1.13; }
+.hero h1 span { white-space: normal; color: #c0c9d3; }
+.hero .lead { font-size: 20px; }
+.product-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+.overview-group { display: flex; flex-direction: column; min-width: 0; }
+.overview-group > h3 { font-size: 26px; margin-bottom: 8px; }
+.overview-group > p { color: var(--muted); margin-bottom: 28px; }
+.overview-card { flex: 1; border-top: 1px solid var(--rule); padding: 28px 0; display: flex; flex-direction: column; align-items: flex-start; }
+.overview-card h4 { font-size: 28px; line-height: 1.2; margin: 8px 0 14px; }
+.overview-card h4 a { color: inherit; text-decoration: none; }
+.overview-card h4 a:hover { text-decoration: underline; }
+.overview-card > p:not(.eyebrow) { color: var(--muted); margin: 18px 0 24px; }
+.overview-card .text-link { margin-top: auto; }
+.professional-copy .section-link, .desktop-copy .section-link { margin-top: 20px; }
+.engineering-evidence-list { display: grid; gap: 64px; }
+.engineering-evidence-list > article { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px; align-items: start; border-top: 1px solid var(--rule); padding-top: 32px; }
+.engineering-evidence-list > article > .eyebrow,
+.engineering-evidence-list h3,
+.engineering-evidence-list > article > .lead { grid-column: 1 / -1; }
+.engineering-evidence-list h3 { font-size: 32px; margin: 8px 0 12px; }
+.engineering-evidence-list > article > .lead { margin-bottom: 28px; }
+.engineering-evidence-list ul { margin: 0; padding: 0; list-style: none; }
+.engineering-evidence-list li { margin-bottom: 24px; }
+.engineering-evidence-list li p { color: var(--muted); margin-top: 8px; }
+.evidence-note { grid-column: 1 / -1; padding: 24px; background: #f1f3f6; border-left: 3px solid var(--blue); margin: 24px 0; }
+.evidence-note h4 { margin-bottom: 10px; font-size: 18px; }
+.evidence-note p { margin: 0; color: var(--muted); }
+.engineering-evidence-list .text-link { justify-self: start; }
+@media (max-width: 1150px) and (min-width: 961px) {
+  .main-navigation { gap: 18px; }
+  .main-navigation .nav-contact { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .product-overview { grid-template-columns: 1fr; gap: 36px; }
+  .engineering-evidence-list > article { grid-template-columns: 1fr; }
+  .engineering-evidence-list .system-diagram { margin-bottom: 28px; }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: clamp(36px, 8vw, 48px); }
+  .hero .lead { font-size: 18px; }
+  .overview-card h4 { font-size: 25px; }
+}

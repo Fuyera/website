@@ -149,8 +149,8 @@ test("professional products and unreleased Canvas keep an honest route to enquir
   }
   for (const slug of ["ambulance-ai", "intelligent-operator"]) {
     const html = await readFile(`dist/products/${slug}.html`, "utf8");
-    assert.match(html, /Current foundation/);
-    assert.match(html, /English-language edition/);
+    assert.match(html, /Current capabilities/);
+    assert.match(html, /English-language adaptation/);
     assert.match(html, /mailto:hello@fuyera.com\?subject=/);
     assert.doesNotMatch(html, /Buy now|Download now|clinically validated|certified medical/i);
   }

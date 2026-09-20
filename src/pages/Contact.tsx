@@ -1,5 +1,6 @@
 import { useLanguage } from "../i18n";
 import { site, services } from "../content";
+import { engineeringCases } from "../portfolio";
 import { useBrowserLocation } from "../browser-location";
 import {
   Arrow,
@@ -13,11 +14,13 @@ export function Contact() {
   const location = useBrowserLocation();
   const topicId = new URL(location || "/contact", site.origin).searchParams.get("topic");
   const service = services.find((entry) => entry.id === topicId);
-  const subject = service ? `${t(service.name)} — ${t("Project enquiry")}` : t("Project enquiry");
+  const product = engineeringCases.find((entry) => entry.href.split("/").pop() === topicId);
+  const topic = service?.name ?? product?.product ?? (topicId === "anchor" ? "Anchor" : undefined);
+  const subject = topic ? `${t(topic)} — ${t("Project enquiry")}` : t("Project enquiry");
   return (
     <>
       <PageIntro eyebrow={t("CONTACT")} title={t("Tell us what you want to make work.")}>
-        <p>{t("A professional system, an English-language product edition or an integration challenge. Start with the problem and the outcome you have in mind.")}</p>
+        <p>{t("A product enquiry, an adaptation request or an integration challenge. Start with the task and the outcome you have in mind.")}</p>
       </PageIntro>
       <section className="section section-after-intro">
         <div className="container contact-grid">
@@ -28,7 +31,7 @@ export function Contact() {
               <Arrow diagonal />
             </a>
             <p>{t("Send us a short introduction to your project.")}</p>
-            {service && <p className="enquiry-topic">{t("Enquiry topic")}: <strong>{t(service.name)}</strong></p>}
+            {topic && <p className="enquiry-topic">{t("Enquiry topic")}: <strong>{t(topic)}</strong></p>}
             <LinkButton href={`mailto:${site.email}?subject=${encodeURIComponent(subject)}`}>{t("Email us")}</LinkButton>
             <CopyEmail />
             <p className="small-note">{t("Email us opens your email app. You can also copy the address and use your preferred email service.")}</p>
@@ -50,6 +53,8 @@ export function Contact() {
               </li>
             </ol>
             <p className="small-note">{t("Please keep the first message brief. Don’t send passwords, confidential customer data or sensitive materials.")}</p>
+            <h3>{t("What happens next")}</h3>
+            <p>{t("We review the fit with the product or service, clarify missing requirements and discuss a next step before proposing delivery scope.")}</p>
           </div>
         </div>
       </section>
@@ -112,11 +117,12 @@ export function Support() {
           <article className="support-product" id="professional-systems">
             <div>
               <span className="eyebrow">{t("PROFESSIONAL SYSTEMS")}</span>
-              <h2>{t("Project & integration enquiries")}</h2>
-              <p>{t("For Ambulance AI System and Intelligent Operator Assistant, Fuyera coordinates product, English-language edition and integration discussions.")}</p>
+              <h2>{t("Support for an existing project")}</h2>
+              <p>{t("Use the support channel agreed for your deployment. If you need help finding it, email Fuyera with the product and project reference, without sensitive operational data.")}</p>
               <LinkButton
-                href={localHref(`mailto:${site.email}?subject=Professional%20system%20enquiry`)}
-              >{t("Contact Fuyera")}</LinkButton>
+                href={localHref(`mailto:${site.email}?subject=Professional%20system%20support`)}
+              >{t("Email project support")}</LinkButton>
+              <p>{t("Planning a new project?")} <a href={localHref("/contact")}>{t("Discuss your requirements")}</a></p>
             </div>
             <div className="resource-links">
               <a href={localHref("/products/ambulance-ai")}>{t("Ambulance AI System")}<Arrow />

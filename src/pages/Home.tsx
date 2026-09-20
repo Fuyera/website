@@ -1,8 +1,7 @@
 import { useLanguage } from "../i18n";
 import {
   EngineeringShowcase,
-  ProfessionalProducts,
-  DesktopProducts,
+  ProductOverview,
 } from "../components/site/Portfolio";
 import { services } from "../content";
 import {
@@ -20,13 +19,13 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">{t("AI PRODUCTS & ENGINEERING")}</p>
-            <h1>{t("AI products.")}<br />
-              <span>{t("Practical engineering.")}</span>
+            <h1>{t("Intelligent systems for professional work.")}<br />
+              <span>{t("Focused software for everyday tasks.")}</span>
             </h1>
-            <p className="lead">{t("From ambulance mission systems and intelligent operator assistance to native desktop tools. Software that connects real inputs to useful outcomes.")}</p>
+            <p className="lead">{t("Explore ambulance mission records, AI-assisted call handling, screen annotation and intentional phone use. Fuyera supports product enquiries, adaptation and integration around your needs.")}</p>
             <div className="hero-actions">
-              <LinkButton href={localHref("/products")}>{t("Explore our products")}</LinkButton>
-              <LinkButton href={localHref("/contact")} secondary>{t("Discuss a project")}</LinkButton>
+              <LinkButton href={localHref("/products")}>{t("Explore products & solutions")}</LinkButton>
+              <LinkButton href={localHref("/contact")} secondary>{t("Discuss your requirements")}</LinkButton>
             </div>
           </div>
           <BrandForm />
@@ -37,33 +36,28 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <EngineeringShowcase />
       <section className="section" id="products">
         <div className="container">
           <div className="section-heading">
             <div>
               <p className="eyebrow">{t("PRODUCTS & SOLUTIONS")}</p>
-              <h2>{t("Professional systems.")}<br />{t("Personal tools.")}</h2>
+              <h2>{t("Find the product")}<br />{t("for your task.")}</h2>
             </div>
             <a className="text-link" href={localHref("/products")}>{t("View products")}<Arrow />
             </a>
           </div>
-          <ProfessionalProducts />
-          <div className="portfolio-subheading">
-            <h3>{t("Tools for thinking and explaining.")}</h3>
-            <p>{t("Native experiences for the way people work.")}</p>
-          </div>
-          <DesktopProducts />
+          <ProductOverview />
         </div>
       </section>
+      <EngineeringShowcase />
       <section className="section services-section" id="business-model">
         <div className="container">
           <div className="section-heading">
             <div>
               <p className="eyebrow">{t("WORK WITH FUYERA")}</p>
-              <h2>{t("From a defined problem")}<br />{t("to working software.")}</h2>
+              <h2>{t("Start with what")}<br />{t("you need to change.")}</h2>
             </div>
-            <p>{t("Bring a real task, a product idea or a system that needs to work better. We help define the next useful step.")}</p>
+            <p>{t("Adapt a product, connect an existing workflow or develop a prototype. Choose the starting point that fits your project.")}</p>
           </div>
           <div className="service-list">
             {services.map((s) => (
@@ -83,8 +77,8 @@ export default function Home() {
         <div className="container">
           <p className="eyebrow">{t("FUYERA INTELLIGENCE")}</p>
           <div>
-            <h2>{t("Product thinking.")}<br />{t("Engineering discipline.")}</h2>
-            <p>{t("Fuyera connects a portfolio of specialist systems and focused applications with product engineering and commercial delivery. Talk to us about a product, an English-language edition or a defined integration project.")}</p>
+            <h2>{t("Products, adaptation")}<br />{t("and engineering.")}</h2>
+            <p>{t("Fuyera brings intelligent systems and focused software products to professional teams and individual users, with product adaptation, integration and engineering services.")}</p>
             <a className="text-link" href={localHref("/company")}>{t("About Fuyera")}<Arrow />
             </a>
           </div>

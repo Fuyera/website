@@ -20,7 +20,7 @@ const solutionDetails = {
         "Keep source references and correction history alongside the event, so a reviewer can understand what changed and why.",
       ],
       [
-        "Local event foundation",
+        "Local recording & replay",
         "Record and replay events locally, with explicit adapter health and degraded-state information.",
       ],
       [
@@ -83,13 +83,15 @@ export function Solution({ kind }: { kind: "ambulance" | "operator" }) {
           <div className="solution-hero-grid">
             <div>
               <p className="eyebrow">{t(item.product)}</p>
+              <p>{t(item.purpose)}</p>
               <span className="portfolio-status">
                 {t(kind === "ambulance"
                   ? "Engineering prototype"
-                  : "Pilot-stage solution")}{t(" ")}{t("· Project-based delivery")}</span>
+                  : "Pilot-stage software")}{t(" ")}{t("· Project-based delivery")}</span>
               <h1>{t(details.title)}</h1>
-              <p className="lead">{t(details.lead)}</p>
-              <LinkButton href={localHref("#project-enquiry")}>{t("Discuss this solution")}</LinkButton>
+              <p className="lead">{t(item.description)}</p>
+              <p className="small-note">{t(item.audience)}</p>
+              <LinkButton href={localHref("#project-enquiry")}>{t(item.action)}</LinkButton>
             </div>
             <ProductDemonstration kind={kind} />
           </div>
@@ -130,14 +132,7 @@ export function Solution({ kind }: { kind: "ambulance" | "operator" }) {
           </div>
           <div>
             <p className="lead">{t(details.intelligence)}</p>
-            <dl className="system-principles">
-              {item.capabilities.map(([name, body]) => (
-                <div key={name}>
-                  <dt>{t(name)}</dt>
-                  <dd>{t(body)}</dd>
-                </div>
-              ))}
-            </dl>
+            <a className="text-link" href={localHref("/technology")}>{t("Explore the engineering")}<Arrow /></a>
           </div>
         </div>
       </section>
@@ -145,10 +140,10 @@ export function Solution({ kind }: { kind: "ambulance" | "operator" }) {
         <div className="container two-column">
           <div>
             <p className="eyebrow">{t("PRODUCT & DELIVERY")}</p>
-            <h2>{t("A defined foundation.")}<br />{t("A project-specific fit.")}</h2>
+            <h2>{t("What works today.")}<br />{t("What your project needs.")}</h2>
           </div>
           <div>
-            <h3>{t("Current foundation")}</h3>
+            <h3>{t("Current capabilities")}</h3>
             <p>{t(details.current)}</p>
             <h3>{t("For your deployment")}</h3>
             <p>{t(details.adaptation)}</p>
@@ -160,14 +155,15 @@ export function Solution({ kind }: { kind: "ambulance" | "operator" }) {
         <div className="container two-column">
           <div>
             <p className="eyebrow">{t("WORK WITH FUYERA")}</p>
-            <h2>{t("Explore an English-language edition.")}</h2>
+            <h2>{t("Discuss your project requirements.")}</h2>
           </div>
           <div>
-            <p>{t("Tell us your operating scenario, language, existing systems and intended users. Fuyera coordinates the commercial discussion and an English-language edition around an agreed scope.")}</p>
+            <p>{t("Tell us your operating scenario, language, existing systems and intended users. We discuss product fit, English-language adaptation and integration around an agreed scope.")}</p>
             <p>{t("Localisation, interfaces, a demonstration and pilot acceptance are planned together. Delivery timing is set after reviewing the requirements.")}</p>
             <LinkButton
               href={localHref(`mailto:${site.email}?subject=${encodeURIComponent(item.product + " — project enquiry")}`)}
             >{t("Email about this solution")}</LinkButton>
+            <a className="text-link section-link" href={localHref(`/contact?topic=${kind === "ambulance" ? "ambulance-ai" : "intelligent-operator"}`)}>{t("Prepare your enquiry")}<Arrow /></a>
             <a className="text-link section-link" href={localHref("/services")}>{t("How we deliver projects")}<Arrow />
             </a>
           </div>

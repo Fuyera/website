@@ -16,6 +16,12 @@ export const engineeringCases = [
       "Read-only fleet view",
     ],
     foundation: "Working software foundation",
+    audience: "For ambulance operators and integration teams.",
+    purpose: "Mission records & review",
+    description: "Bring recorded mission events, source references and corrections into one timeline for review.",
+    action: "Discuss a pilot",
+    scenario: ["Review a departure time that was entered incorrectly.", "Select the original event, then open the correction to compare its time and source.", "See the corrected time alongside the original record."],
+    evidence: "Software prototype tested with synthetic events. Live vehicle and medical-device integration remain to be validated.",
     capabilities: [
       [
         "Event-led architecture",
@@ -50,6 +56,12 @@ export const engineeringCases = [
       "Operator review",
     ],
     foundation: "Pilot-stage software",
+    audience: "For emergency call centres and integration teams.",
+    purpose: "Call transcription & operator review",
+    description: "Turn call transcripts into key facts and follow-up prompts, with the operator reviewing and confirming the information.",
+    action: "Discuss integration",
+    scenario: ["A caller gives an address but does not specify the entrance.", "Read the transcript, check the extracted fields and ask about the missing detail.", "Keep operator-confirmed information distinct from the original transcript."],
+    evidence: "Pilot-stage software with transcription and review workflows. English recognition and target call connections require project validation.",
     capabilities: [
       [
         "Streaming speech",
@@ -84,6 +96,12 @@ export const engineeringCases = [
     core: "Native ink runtime",
     outputs: ["On-screen annotations", "Hide & resume", "Local recovery"],
     foundation: "Native macOS application",
+    audience: "For teachers, presenters and anyone explaining on screen.",
+    purpose: "Screen annotation on Mac",
+    description: "Draw over slides, documents and videos on your Mac, then switch back to the app underneath.",
+    action: "Explore Canvas",
+    scenario: ["Explain a point while keeping a document or video in view.", "Draw on a separate layer, then hide the ink to return to the app.", "Bring the marks back when you want to continue explaining."],
+    evidence: "Native macOS software with drawing, pass-through and local recovery. Public release is pending; the scene image is an illustration.",
     capabilities: [
       [
         "System-level interaction",

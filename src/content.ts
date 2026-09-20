@@ -10,7 +10,7 @@ export const site = {
 
 export const pages = {
   "/": {
-    title: "AI products. Practical engineering. — Fuyera",
+    title: "Intelligent systems & everyday software — Fuyera",
     description:
       "Explore Fuyera’s professional systems and applications: ambulance mission intelligence, operator assistance, native desktop tools and product engineering.",
   },
@@ -32,7 +32,7 @@ export const pages = {
   "/products/intelligent-operator": {
     title: "Intelligent Operator Assistant — Speech & context | Fuyera",
     description:
-      "Live transcription, structured call facts and reviewable assistance for operators. Explore the software foundation and an English-language project edition.",
+      "Live transcription, structured call facts and human-reviewed assistance. Explore the pilot-stage software and its project adaptation requirements.",
   },
   "/products/laofu-canvas": {
     title: "laofu canvas — Write and explain on screen | Fuyera",
@@ -40,9 +40,9 @@ export const pages = {
       "A native macOS screen annotation tool. Write, highlight and explain over existing content with eight tools and local persistence. Release pending.",
   },
   "/services": {
-    title: "Engineering services — Fuyera",
+    title: "Product adaptation & engineering services — Fuyera",
     description:
-      "Workflow engineering, AI integration and product engineering, with defined scope, reviewable results and a clear handover.",
+      "Adapt a product, connect a workflow or build a prototype. Explore product adaptation, system integration and software development with Fuyera.",
   },
   "/technology": {
     title: "Engineering capabilities — Fuyera",
@@ -52,7 +52,7 @@ export const pages = {
   "/company": {
     title: "Company — Fuyera Intelligence",
     description:
-      "Meet Fuyera: an AI product and intelligent software company combining product thinking with practical engineering.",
+      "Meet Fuyera: professional intelligent systems, everyday software products and related adaptation, integration and engineering services.",
   },
   "/contact": {
     title: "Contact — Fuyera",
@@ -92,26 +92,26 @@ export function resolvePath(pathname: string): PagePath {
 export const services = [
   {
     id: "workflow-engineering",
-    name: "Workflow Engineering",
-    short: "Turn a recurring task into a clear, reviewable workflow.",
-    outcome: "Connected steps. Useful outputs.",
+    name: "Product adaptation",
+    short: "Adapt a product to your language, workflow and operating environment.",
+    outcome: "A version fitted to the task.",
     audience:
-      "Teams whose work moves between documents, tools and manual checks.",
+      "Teams evaluating one of the professional systems for their own users.",
     input:
-      "Representative materials, the current steps and the decisions that need human review.",
+      "The product, target language, user roles and examples of the work it needs to support.",
     deliverable:
-      "A working flow, review points, structured outputs and operating instructions.",
+      "An adapted interface or workflow, validation examples and operating notes, as defined for the project.",
     acceptance:
       "Run agreed examples from input to output, and check the results against your criteria.",
     boundary:
-      "Human review remains where it matters. A project does not imply fully unattended operation.",
+      "Language, terminology, devices and live operating conditions require validation for the intended use.",
     icon: "workflow",
   },
   {
     id: "ai-integration",
-    name: "AI Integration & Deployment",
-    short: "Connect AI capabilities to the software your team uses.",
-    outcome: "A considered fit for your system.",
+    name: "System & workflow integration",
+    short: "Connect speech, AI and data capabilities to the systems your team already uses.",
+    outcome: "Interfaces with checkable inputs and outputs.",
     audience:
       "Teams adding model or AI service capabilities to an existing application.",
     input:
@@ -126,7 +126,7 @@ export const services = [
   },
   {
     id: "product-engineering",
-    name: "Product Engineering",
+    name: "Prototyping & product development",
     short: "Develop a focused prototype or improve an existing product.",
     outcome: "An idea made testable.",
     audience:
