@@ -1,53 +1,43 @@
-import { useEffect } from 'react';
-import { Navigation } from './sections/Navigation';
-import { Hero } from './sections/Hero';
-import { CompanyOverview } from './sections/CompanyOverview';
-import { ProductEcosystem } from './sections/ProductEcosystem';
-import { BusinessModel } from './sections/BusinessModel';
-import { Contact } from './sections/Contact';
-import { Footer } from './sections/Footer';
-import './App.css';
+import { Header, Footer } from "./components/site/Site";
+import Home from "./pages/Home";
+import { Products, Anchor } from "./pages/Products";
+import { Services, Technology } from "./pages/Services";
+import Company from "./pages/Company";
+import { Contact, Support } from "./pages/Contact";
+import { Privacy, Terms, NotFound } from "./pages/Legal";
+import { Ambulance, IntelligentOperator, Canvas } from "./pages/Solutions";
+import type { PagePath } from "./content";
+import { LanguageContext, translate } from "./i18n";
+import type { Locale } from "./i18n";
 
-function App() {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('section').forEach((section) => {
-      section.classList.add('fade-in-section');
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
+const routes = {
+  "/": Home,
+  "/products": Products,
+  "/products/anchor": Anchor,
+  "/products/ambulance-ai": Ambulance,
+  "/products/intelligent-operator": IntelligentOperator,
+  "/products/laofu-canvas": Canvas,
+  "/services": Services,
+  "/technology": Technology,
+  "/company": Company,
+  "/contact": Contact,
+  "/support": Support,
+  "/legal/privacy": Privacy,
+  "/legal/terms": Terms,
+  "/404": NotFound,
+};
+export default function App({ path, locale = "en" }: { path: PagePath; locale?: Locale }) {
+  const Page = routes[path];
   return (
-    <div className="min-h-screen bg-fuyera-dark text-foreground">
-      <Navigation />
-      
-      <main>
-        <Hero />
-        <CompanyOverview />
-        <ProductEcosystem />
-        <BusinessModel />
-        <Contact />
+    <LanguageContext value={locale}>
+      <a className="skip-link" href="#main">
+        {translate("Skip to content", locale)}
+      </a>
+      <Header path={path} />
+      <main id="main" tabIndex={-1}>
+        <Page />
       </main>
-      
       <Footer />
-    </div>
+    </LanguageContext>
   );
 }
-
-export default App;

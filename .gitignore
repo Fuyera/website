@@ -25,3 +25,15 @@ Thumbs.db
 # Misc
 fuyera-dist.tar.gz
 zipmjy9P
+
+# Temporary static-render bundle and local verification artifacts
+.prerender/
+verification/
+
+# Local business/design material; this repository is public
+/Fuyera_Positioning_and_Website_Redesign_v2.0.md
+/CURRENT_CONTEXT.md
+/WEBSITE_REDESIGN_PLAN.md
+/WEBSITE_DESIGN_SPEC.md
+/IMPLEMENTATION_VERIFICATION.md
+/design/
